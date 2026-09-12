@@ -6,24 +6,21 @@ import { usePathname } from "next/navigation";
 import {
   Menu,
   X,
-  ChevronDown,
   ChevronRight,
   Phone,
   Mail,
   MapPin,
   Clock,
   ArrowRight,
-  MessageCircle,
   Sparkles,
 } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 import Logo from "@/components/ui/Logo";
 import { BRAND, NAV_LINKS } from "@/lib/constants";
 
 export default function Navbar() {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
-  const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -37,13 +34,6 @@ export default function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  // Close mobile menu on page navigation
-  useEffect(() => {
-    setMobileMenuOpen(false);
-    setMobileServicesOpen(false);
-    setServicesDropdownOpen(false);
-  }, [pathname]);
 
   // Lock body scroll when mobile menu is open
   useEffect(() => {
@@ -62,7 +52,7 @@ export default function Navbar() {
       {/* Top Info Micro-Bar */}
       <div className="bg-brand-maroon text-white text-[12px] py-1.5 px-4 hidden md:block border-b border-brand-maroon-light/30">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-5">
             <span className="flex items-center gap-1.5 text-neutral-300">
               <MapPin className="w-3.5 h-3.5 text-brand-orange" />
               {BRAND.address}
@@ -91,10 +81,10 @@ export default function Navbar() {
               href={BRAND.whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1 text-emerald-400 hover:text-emerald-300 font-medium ml-2"
+              className="flex items-center gap-1.5 text-emerald-400 hover:text-emerald-300 font-medium ml-2 transition-colors"
             >
-              <MessageCircle className="w-3.5 h-3.5" />
-              WhatsApp
+              <FaWhatsapp className="w-3.5 h-3.5" />
+              <span>WhatsApp</span>
             </a>
           </div>
         </div>
@@ -108,7 +98,6 @@ export default function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-18 sm:h-20">
-            
             {/* Logo */}
             <div className="flex-shrink-0 py-1">
               <Logo />
@@ -121,44 +110,6 @@ export default function Navbar() {
                   link.href === "/"
                     ? pathname === "/"
                     : pathname.startsWith(link.href);
-
-                if (link.children) {
-                  return (
-                    <div
-                      key={link.name}
-                      className="relative"
-                      onMouseEnter={() => setServicesDropdownOpen(true)}
-                      onMouseLeave={() => setServicesDropdownOpen(false)}
-                    >
-                      <button
-                        type="button"
-                        className={`flex items-center gap-1 text-[14.5px] font-semibold transition-colors py-2 ${
-                          isActive
-                            ? "text-brand-orange-deep font-bold"
-                            : "text-brand-maroon hover:text-brand-orange"
-                        }`}
-                      >
-                        {link.name}
-                        <ChevronDown className="w-4 h-4 transition-transform duration-200" />
-                      </button>
-
-                      {/* Dropdown Menu */}
-                      {servicesDropdownOpen && (
-                        <div className="absolute top-full left-0 w-72 bg-white rounded-xl shadow-xl border border-brand-border p-2 z-50">
-                          {link.children.map((subItem) => (
-                            <Link
-                              key={subItem.name}
-                              href={subItem.href}
-                              className="block px-3.5 py-2 text-[13.5px] font-medium text-brand-text-primary hover:bg-brand-orange-tint hover:text-brand-orange-deep rounded-lg transition-colors"
-                            >
-                              {subItem.name}
-                            </Link>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                  );
-                }
 
                 return (
                   <Link
@@ -198,7 +149,7 @@ export default function Navbar() {
               >
                 <span>Submit Need</span>
               </Link>
-              
+
               {/* Hamburger Button */}
               <button
                 type="button"
@@ -214,14 +165,13 @@ export default function Navbar() {
                 )}
               </button>
             </div>
-
           </div>
         </div>
 
         {/* Mobile Navigation Drawer & Backdrop */}
         {mobileMenuOpen && (
           <div className="lg:hidden fixed inset-x-0 top-[73px] sm:top-[81px] bottom-0 z-50 bg-black/50 backdrop-blur-xs flex flex-col">
-            <div 
+            <div
               className="bg-brand-warm-white border-t border-brand-border overflow-y-auto max-h-[calc(100vh-73px)] sm:max-h-[calc(100vh-81px)] shadow-2xl p-4 space-y-3"
               onClick={(e) => e.stopPropagation()}
             >
@@ -237,49 +187,12 @@ export default function Navbar() {
               </div>
 
               {/* Navigation Items */}
-              <nav className="space-y-1 pt-1">
+              <nav className="space-y-1.5 pt-1">
                 {NAV_LINKS.map((link) => {
                   const isActive =
                     link.href === "/"
                       ? pathname === "/"
                       : pathname.startsWith(link.href);
-
-                  if (link.children) {
-                    return (
-                      <div key={link.name} className="rounded-xl overflow-hidden border border-brand-border/60 bg-white">
-                        <button
-                          type="button"
-                          onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-                          className="w-full flex items-center justify-between px-4 py-3 text-sm font-bold text-brand-maroon hover:bg-brand-light-gray transition-colors"
-                        >
-                          <span className={isActive ? "text-brand-orange-deep" : ""}>
-                            {link.name}
-                          </span>
-                          <ChevronDown
-                            className={`w-4 h-4 text-brand-text-muted transition-transform duration-200 ${
-                              mobileServicesOpen ? "rotate-180 text-brand-orange" : ""
-                            }`}
-                          />
-                        </button>
-
-                        {/* Collapsible Sub-menu */}
-                        {mobileServicesOpen && (
-                          <div className="bg-brand-warm-white border-t border-brand-border/60 px-3 py-2 space-y-1">
-                            {link.children.map((subItem) => (
-                              <Link
-                                key={subItem.name}
-                                href={subItem.href}
-                                onClick={() => setMobileMenuOpen(false)}
-                                className="block px-3 py-2 text-xs font-semibold text-brand-text-secondary hover:text-brand-orange-deep hover:bg-white rounded-lg transition-colors"
-                              >
-                                {subItem.name}
-                              </Link>
-                            ))}
-                          </div>
-                        )}
-                      </div>
-                    );
-                  }
 
                   return (
                     <Link
@@ -293,7 +206,11 @@ export default function Navbar() {
                       }`}
                     >
                       <span>{link.name}</span>
-                      <ChevronRight className={`w-4 h-4 ${isActive ? "text-white" : "text-brand-text-muted"}`} />
+                      <ChevronRight
+                        className={`w-4 h-4 ${
+                          isActive ? "text-white" : "text-brand-text-muted"
+                        }`}
+                      />
                     </Link>
                   );
                 })}
@@ -316,7 +233,7 @@ export default function Navbar() {
                   rel="noopener noreferrer"
                   className="w-full bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold py-3 px-4 rounded-xl flex items-center justify-center gap-2 shadow-xs transition-colors text-sm"
                 >
-                  <MessageCircle className="w-4 h-4 fill-white" />
+                  <FaWhatsapp className="w-4 h-4 text-white" />
                   <span>Chat on WhatsApp</span>
                 </a>
               </div>
@@ -329,28 +246,32 @@ export default function Navbar() {
                 </span>
                 <span className="flex items-center gap-2">
                   <Phone className="w-3.5 h-3.5 text-brand-orange flex-shrink-0" />
-                  <a href={`tel:${BRAND.phone}`} className="hover:text-brand-orange">
+                  <a
+                    href={`tel:${BRAND.phone}`}
+                    className="hover:text-brand-orange"
+                  >
                     {BRAND.phone}
                   </a>
                 </span>
                 <span className="flex items-center gap-2">
                   <Mail className="w-3.5 h-3.5 text-brand-orange flex-shrink-0" />
-                  <a href={`mailto:${BRAND.email}`} className="hover:text-brand-orange">
+                  <a
+                    href={`mailto:${BRAND.email}`}
+                    className="hover:text-brand-orange"
+                  >
                     {BRAND.email}
                   </a>
                 </span>
               </div>
-
             </div>
 
             {/* Click backdrop to close */}
-            <div 
-              className="flex-grow" 
-              onClick={() => setMobileMenuOpen(false)} 
+            <div
+              className="flex-grow"
+              onClick={() => setMobileMenuOpen(false)}
             />
           </div>
         )}
-
       </div>
     </header>
   );

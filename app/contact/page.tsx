@@ -7,12 +7,12 @@ import {
   Phone,
   Mail,
   Clock,
-  MessageCircle,
   Send,
   CheckCircle2,
   Sparkles,
   ShieldCheck,
 } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 import { BRAND } from "@/lib/constants";
 
 export default function ContactPage() {
@@ -135,7 +135,7 @@ export default function ContactPage() {
                   rel="noopener noreferrer"
                   className="w-full bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-sm py-3.5 px-4 rounded-xl flex items-center justify-center gap-2.5 shadow transition-all"
                 >
-                  <MessageCircle className="w-5 h-5 fill-white" />
+                  <FaWhatsapp className="w-5 h-5 text-white" />
                   <span>Chat Directly on WhatsApp</span>
                 </a>
               </div>

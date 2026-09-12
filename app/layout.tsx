@@ -13,23 +13,28 @@ const jakarta = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   title:
-    "Surya Business Development Centre (SBDC) | Empowering Businesses. Building Futures.",
+    "Surya Business Development Center (SBDC) | Empowering Businesses. Building Futures.",
   description:
-    "Official corporate portal of Surya Business Development Centre Pvt. Ltd. (SBDC). Facilitating connections between aspiring entrepreneurs, businesses, and external funding, training, and institutional support programs.",
+    "Official corporate portal of Surya Business Development Center Pvt. Ltd. (SBDC). Supporting entrepreneurs, enterprises, institutions, and development organizations through practical business solutions, research, training, and enterprise development.",
   keywords: [
     "SBDC",
-    "Surya Business Development Centre",
-    "Business Facilitation Nepal",
-    "Entrepreneurship Support",
-    "Funding Facilitation",
-    "SME Capacity Building",
-    "Birgunj Parsa Nepal",
+    "Surya Business Development Center",
+    "Business Development Nepal",
+    "Research and Surveys Nepal",
+    "Enterprise Development",
+    "Training and Consulting",
+    "Birgunj Parsa Madhesh Province Nepal",
     "Nepal",
   ],
+  icons: {
+    icon: [{ url: "/favicon.png", type: "image/png" }],
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
+  },
   openGraph: {
-    title: "Surya Business Development Centre (SBDC)",
+    title: "Surya Business Development Center (SBDC)",
     description:
-      "Empowering Businesses. Building Futures. Facilitating connections with opportunities for sustainable growth.",
+      "Empowering Businesses. Building Futures. Practical solutions for entrepreneurs, enterprises, institutions and development organizations.",
     type: "website",
   },
 };

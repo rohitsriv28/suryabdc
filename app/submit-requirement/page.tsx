@@ -2,16 +2,8 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import {
-  Send,
-  CheckCircle2,
-  AlertCircle,
-  Sparkles,
-  Building2,
-  HelpCircle,
-  Clock,
-  ArrowRight,
-} from "lucide-react";
+import { Send, CheckCircle2, AlertCircle, Sparkles, Clock } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 import { BRAND } from "@/lib/constants";
 
 export default function SubmitRequirementPage() {
@@ -105,11 +97,11 @@ export default function SubmitRequirementPage() {
               Important Facilitator Notice
             </h2>
             <p className="text-xs sm:text-[13px] text-brand-text-primary leading-relaxed mt-1">
-              Surya Business Development Centre Pvt. Ltd. (SBDC) operates solely
-              as a <strong>facilitator and connector</strong>. SBDC does not
-              distribute direct loans, microcredit, or grants. All external
-              funding and program approvals remain under the independent
-              discretion of external institutions.
+              Surya Business Development Center Pvt. Ltd. (SBDC) operates solely
+              as a <strong>facilitator and consulting partner</strong>. SBDC
+              does not distribute direct loans, microcredit, or grants. All
+              external funding and program approvals remain under the
+              independent discretion of external institutions.
             </p>
           </div>
         </div>
@@ -171,7 +163,8 @@ export default function SubmitRequirementPage() {
                 rel="noopener noreferrer"
                 className="bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm px-6 py-3 rounded-xl shadow transition-colors flex items-center gap-2"
               >
-                Follow Up on WhatsApp
+                <FaWhatsapp className="w-4 h-4 text-white" />
+                <span>Follow Up on WhatsApp</span>
               </a>
             </div>
           </div>
@@ -382,14 +375,14 @@ export default function SubmitRequirementPage() {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-5">
                 {[
-                  "Funding Facilitation",
-                  "Training & Capacity Building",
-                  "Business Development Support",
-                  "Entrepreneurship Mentorship",
-                  "Institutional Facilitation",
+                  "Business Development & Consulting",
+                  "Research & Field Surveys",
+                  "Entrepreneurship & Training (ToT)",
+                  "Business Planning & Feasibility Studies",
+                  "Events & Business Networking",
                   "Marketplace & Buyer Linkages",
-                  "Technical Quality & Packaging",
-                  "Company Registration & PAN Guidance",
+                  "Detailed Project Reports (DPR)",
+                  "Company Registration & Compliance Guidance",
                 ].map((type) => {
                   const checked = formData.supportTypes.includes(type);
                   return (

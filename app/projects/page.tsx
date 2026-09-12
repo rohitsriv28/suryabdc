@@ -7,7 +7,6 @@ import {
   Calendar,
   Users,
   Building,
-  ArrowRight,
   Sparkles,
   CheckCircle,
 } from "lucide-react";
@@ -19,10 +18,7 @@ export default function ProjectsPage() {
 
   const categories = [
     "All",
-    "Women Empowerment",
-    "Capacity Building",
-    "Youth Innovation",
-    "Market Linkage",
+    ...Array.from(new Set(FEATURED_PROJECTS.map((p) => p.category))),
   ];
 
   const filteredProjects =

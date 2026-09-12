@@ -5,7 +5,7 @@ import { ACTIVITIES } from "@/lib/data";
 import CtaBannerSection from "@/components/home/CtaBannerSection";
 
 export const metadata = {
-  title: "Activities & Events | Surya Business Development Centre (SBDC)",
+  title: "Activities & Events | Surya Business Development Center (SBDC)",
   description:
     "Explore our recent workshops, training seminars, networking forums, and field development activities.",
 };

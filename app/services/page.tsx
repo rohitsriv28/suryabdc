@@ -1,37 +1,48 @@
 import React from "react";
 import Link from "next/link";
 import {
-  Coins,
-  Presentation,
   TrendingUp,
-  Sparkles,
-  Building2,
-  Network,
+  Search,
+  GraduationCap,
+  FileCheck,
+  Users,
   ArrowRight,
   AlertCircle,
-  FileEdit,
-  Users,
-  Search,
-  Handshake,
   CheckCircle2,
+  Sparkles,
+  ClipboardCheck,
+  FileText,
+  Briefcase,
 } from "lucide-react";
-import { SERVICES, PROGRAM_TYPES, PROCESS_STEPS } from "@/lib/data";
-import { BRAND } from "@/lib/constants";
+import {
+  SERVICES,
+  SERVICE_AREAS,
+  PROGRAM_TYPES,
+  PROCESS_STEPS,
+} from "@/lib/data";
 import CtaBannerSection from "@/components/home/CtaBannerSection";
 
 export const metadata = {
-  title: "What We Do & Services | Surya Business Development Centre (SBDC)",
+  title: "What We Do & Services | Surya Business Development Center (SBDC)",
   description:
-    "Explore SBDC's specialized facilitation services: Funding Facilitation, Training & Capacity Building, Business Development, and Market Linkages.",
+    "Explore SBDC's core services: Business Development & Consulting, Research & Surveys, Entrepreneurship & Training, Business Planning, and Events.",
 };
 
 const serviceIcons: Record<string, React.ReactNode> = {
-  Coins: <Coins className="w-8 h-8 text-brand-orange" />,
-  Presentation: <Presentation className="w-8 h-8 text-brand-orange" />,
   TrendingUp: <TrendingUp className="w-8 h-8 text-brand-orange" />,
-  Sparkles: <Sparkles className="w-8 h-8 text-brand-orange" />,
-  Building2: <Building2 className="w-8 h-8 text-brand-orange" />,
-  Network: <Network className="w-8 h-8 text-brand-orange" />,
+  Search: <Search className="w-8 h-8 text-brand-orange" />,
+  GraduationCap: <GraduationCap className="w-8 h-8 text-brand-orange" />,
+  FileCheck: <FileCheck className="w-8 h-8 text-brand-orange" />,
+  Users: <Users className="w-8 h-8 text-brand-orange" />,
+};
+
+const approachIcons: Record<string, React.ReactNode> = {
+  "01": <Search className="w-6 h-6 text-brand-orange" />,
+  "02": <ClipboardCheck className="w-6 h-6 text-brand-orange" />,
+  "03": <FileText className="w-6 h-6 text-brand-orange" />,
+  "04": <Briefcase className="w-6 h-6 text-brand-orange" />,
+  "05": <FileCheck className="w-6 h-6 text-brand-orange" />,
+  "06": <TrendingUp className="w-6 h-6 text-brand-orange" />,
 };
 
 export default function ServicesPage() {
@@ -53,21 +64,21 @@ export default function ServicesPage() {
         {/* Top Headline */}
         <div className="max-w-3xl">
           <span className="text-xs font-extrabold uppercase tracking-widest text-brand-orange block mb-2">
-            OUR SERVICES
+            OUR CORE SERVICES
           </span>
           <h1 className="text-4xl sm:text-5xl font-extrabold text-brand-maroon tracking-tight">
-            Solutions that Empower{" "}
-            <span className="text-brand-orange">Businesses to Grow</span>
+            Practical Solutions for{" "}
+            <span className="text-brand-orange">Enterprise Growth</span>
           </h1>
           <div className="w-20 h-1 bg-brand-orange rounded-full mt-3 mb-5" />
           <p className="text-lg sm:text-xl text-brand-text-secondary leading-relaxed font-normal">
-            We act as a bridge between entrepreneurs, businesses, and the right
-            opportunities, programs, and institutions that can help them grow
-            and succeed.
+            Practical solutions for entrepreneurs, enterprises, institutions,
+            and development organizations through business development, field
+            research, training, feasibility studies, and business networking.
           </p>
         </div>
 
-        {/* Hero Banner Image matching mock */}
+        {/* Hero Banner Image */}
         <div className="mt-10 relative rounded-3xl overflow-hidden shadow-xl border-4 border-white aspect-[16/9] sm:aspect-[21/8] bg-brand-light-gray">
           <img
             src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1600&q=80"
@@ -77,23 +88,35 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* 6 Service Areas Grid */}
+      {/* 5 Core Services Grid */}
       <section
         className="py-16 bg-white border-y border-brand-border/60"
         id="services-grid"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="text-center max-w-3xl mx-auto mb-12">
             <span className="text-xs font-extrabold uppercase tracking-widest text-brand-orange block mb-2">
               OUR SERVICE AREAS
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-brand-maroon tracking-tight">
-              How We Support You
+              Specialized Consulting &amp; Field Capabilities
             </h2>
             <p className="text-brand-text-secondary text-[15px] mt-2">
               Structured assistance tailored to your enterprise lifecycle and
-              specific industry requirements.
+              specific institutional objectives.
             </p>
+
+            {/* Service Areas Tag Cloud */}
+            <div className="flex flex-wrap justify-center items-center gap-2 mt-6">
+              {SERVICE_AREAS.map((area) => (
+                <span
+                  key={area}
+                  className="inline-flex items-center text-[12px] font-medium px-3.5 py-1 rounded-full bg-brand-warm-white border border-brand-border text-brand-maroon"
+                >
+                  {area}
+                </span>
+              ))}
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -103,7 +126,7 @@ export default function ServicesPage() {
                 id={service.id}
                 className="bg-brand-warm-white rounded-2xl p-7 border border-brand-border shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group scroll-mt-28"
               >
-                {/* Icon in orange circle */}
+                {/* Icon */}
                 <div className="w-16 h-16 rounded-2xl bg-brand-orange-tint flex items-center justify-center mb-5 group-hover:scale-105 group-hover:bg-brand-orange/20 transition-all">
                   {serviceIcons[service.iconName] || (
                     <Sparkles className="w-8 h-8 text-brand-orange" />
@@ -148,7 +171,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* 4-Step Process Section */}
+      {/* 6-Stage Process Section */}
       <section className="py-20 bg-brand-warm-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
@@ -156,23 +179,34 @@ export default function ServicesPage() {
               OUR APPROACH
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-brand-maroon tracking-tight">
-              A Simple, Transparent Process
+              A Structured 6-Stage Methodology
             </h2>
+            <p className="text-brand-text-secondary text-[15px] mt-2">
+              Our systematic approach ensures accountable execution, reliable
+              documentation, and continuous improvement.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6">
             {PROCESS_STEPS.map((step) => (
               <div
                 key={step.step}
-                className="flex flex-col items-center text-center"
+                className="bg-white rounded-2xl p-5 border border-brand-border/80 shadow-xs flex flex-col items-center text-center hover:shadow-md hover:-translate-y-1 transition-all"
               >
-                <div className="w-20 h-20 rounded-full bg-white border-2 border-brand-orange-200 shadow-sm flex items-center justify-center text-brand-orange mb-4 relative">
-                  <span className="font-extrabold text-lg">{step.step}</span>
+                <div className="w-14 h-14 rounded-full bg-brand-orange-tint border-2 border-brand-orange/20 shadow-xs flex items-center justify-center text-brand-orange mb-4 relative">
+                  {approachIcons[step.step] || (
+                    <span className="font-extrabold text-base">
+                      {step.step}
+                    </span>
+                  )}
                 </div>
-                <h3 className="text-[17px] font-bold text-brand-maroon mb-2">
+                <span className="text-[11px] font-extrabold text-brand-orange tracking-widest uppercase mb-1">
+                  Step {step.step}
+                </span>
+                <h3 className="text-base font-bold text-brand-maroon mb-2">
                   {step.title}
                 </h3>
-                <p className="text-xs sm:text-[13px] text-brand-text-secondary leading-relaxed">
+                <p className="text-xs text-brand-text-secondary leading-relaxed">
                   {step.description}
                 </p>
               </div>
@@ -185,24 +219,25 @@ export default function ServicesPage() {
               <AlertCircle className="w-5 h-5 text-brand-orange-deep flex-shrink-0 mt-0.5" />
               <p className="text-xs sm:text-sm text-brand-text-primary leading-relaxed">
                 <strong className="font-bold text-brand-maroon">Note: </strong>
-                SBDC does not provide loans, grants, or financial assistance
-                directly. All support is subject to the eligibility criteria and
-                approval process of the respective organization.
+                SBDC delivers business development, research, training, and
+                advisory services. SBDC does not provide direct loans or grants;
+                all institutional opportunities depend on partner eligibility
+                criteria.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Program Types Grid matching mockup */}
+      {/* Program Types Grid */}
       <section className="py-20 bg-white border-t border-brand-border/60">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-xs font-extrabold uppercase tracking-widest text-brand-orange block mb-2">
-              EXAMPLES OF PROGRAMS WE HELP YOU ACCESS
+              DOMAINS &amp; OPPORTUNITIES
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-brand-maroon tracking-tight">
-              Types of Programs &amp; Opportunities
+              Types of Programs &amp; Initiatives We Support
             </h2>
           </div>
 
@@ -237,7 +272,7 @@ export default function ServicesPage() {
       <div className="py-20">
         <CtaBannerSection
           title="Ready to take the next step?"
-          subtitle="Tell us what your business needs and our team will connect you with the right opportunities and support."
+          subtitle="SBDC is ready to work with entrepreneurs, enterprises, development organizations, institutions and business associations."
           buttonText="Submit Your Requirement"
           buttonHref="/submit-requirement"
         />

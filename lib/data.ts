@@ -87,148 +87,137 @@ export const IMPACT_STATS: StatItem[] = [
   { value: "10+", label: "Development Initiatives", icon: "TrendingUp" },
 ];
 
+export const SERVICE_AREAS: string[] = [
+  "Business Development",
+  "Research & Surveys",
+  "Enterprise Development",
+  "Entrepreneurship",
+  "Training & Capacity Building",
+  "Feasibility Studies",
+  "Business Plans",
+  "Project Support",
+  "Business Networking",
+];
+
 export const SERVICES: ServiceItem[] = [
   {
-    id: "funding-facilitation",
-    title: "Funding Facilitation",
+    id: "business-development-consulting",
+    title: "Business Development & Consulting",
     shortDesc:
-      "We help businesses identify and access relevant funding opportunities through appropriate institutions.",
+      "Business strategy and advisory, business planning, enterprise development, growth support and opportunity identification.",
     description:
-      "SBDC acts as an advisory bridge between emerging enterprises and external funding agencies. We review business viability, prepare documentation standards, and guide entrepreneurs toward suitable development banks, grant programs, and impact investors.",
-    iconName: "Coins",
-    benefits: [
-      "Access to verified institutional grants and government subsidized loans",
-      "Assistance in investor-ready business proposals and financial models",
-      "Complete transparency with zero hidden intermediary fees",
-    ],
-    targetAudience: [
-      "Startups seeking seed funding",
-      "Growth-stage SMEs",
-      "Women-led rural enterprises",
-    ],
-    howWeHelp: [
-      "Requirement diagnosis & financial readiness audit",
-      "Matching with active partner funding calls",
-      "Support with application dossiers and compliance",
-    ],
-  },
-  {
-    id: "training-capacity",
-    title: "Training & Capacity Building",
-    shortDesc:
-      "We connect entrepreneurs with quality training and capacity-building programs to strengthen their skills.",
-    description:
-      "Equipping founders, managers, and operational teams with practical knowledge in financial management, digital transformation, modern sales strategies, and regulatory compliance.",
-    iconName: "Presentation",
-    benefits: [
-      "Customized curricula designed with industry experts",
-      "Hands-on workshop formats with real case studies",
-      "Post-training mentorship and implementation follow-ups",
-    ],
-    targetAudience: [
-      "New entrepreneurs",
-      "Micro-enterprise owners",
-      "Youth & student innovators",
-    ],
-    howWeHelp: [
-      "Skills gap assessments for regional clusters",
-      "Coordination of specialized masterclasses",
-      "Certification and peer-learning cohorts",
-    ],
-  },
-  {
-    id: "business-development",
-    title: "Business Development Support",
-    shortDesc:
-      "We assist businesses in identifying growth opportunities, improving operations, and achieving sustainable growth.",
-    description:
-      "From product positioning to supply chain optimization, SBDC delivers actionable business advisory to help companies scale steadily in competitive markets.",
+      "SBDC provides dedicated advisory and strategic consulting to help emerging startups and established enterprises navigate complex markets, scale sustainably, and unlock new operational opportunities.",
     iconName: "TrendingUp",
     benefits: [
-      "Strategic roadmap formulation",
-      "Operational efficiency enhancement",
-      "Cost structure and pricing optimization",
+      "Strategic roadmap formulation & market opportunity mapping",
+      "Enterprise development and operational re-engineering",
+      "Sound business planning & ongoing growth advisory",
     ],
     targetAudience: [
-      "Established SMEs aiming to expand",
-      "Family-run enterprises formalizing operations",
+      "Emerging & growth-stage enterprises",
+      "Family businesses formalizing operations",
+      "Institutions & development bodies",
     ],
     howWeHelp: [
-      "One-on-one business advisory clinics",
-      "Market feasibility studies",
-      "Operational workflow re-engineering",
+      "Conduct in-depth business diagnostic assessments",
+      "Formulate tailored, practical growth strategies",
+      "Support continuous implementation and advisory check-ins",
     ],
   },
   {
-    id: "entrepreneurship-support",
-    title: "Entrepreneurship Support",
+    id: "research-surveys",
+    title: "Research & Surveys",
     shortDesc:
-      "We encourage and support aspiring entrepreneurs by guiding them toward the right resources, programs, and mentorship.",
+      "Market and enterprise surveys, field data collection, business research, respondent interviews, documentation and reporting.",
     description:
-      "Transforming early-stage concepts into viable, registered businesses through structured guidance, legal navigation, and early validation frameworks.",
-    iconName: "Sparkles",
+      "Equipped with deep ground-level reach across Birgunj and Madhesh Province, our specialist field research team executes rigorous baseline, midline, and market surveys with high data integrity.",
+    iconName: "Search",
     benefits: [
-      "Idea validation and prototype assessment",
-      "Company registration and tax compliance guidance",
-      "Mentorship from experienced domain leaders",
+      "Accurate ground-level market intelligence and sector insights",
+      "Rigorous qualitative and quantitative field data collection",
+      "Actionable reporting, documentation, and stakeholder analysis",
     ],
     targetAudience: [
-      "First-time founders",
-      "University graduates",
-      "Returnee migrant entrepreneurs",
+      "Development agencies & INGOs/NGOs",
+      "Industry associations & chambers of commerce",
+      "Commercial enterprises planning market entry",
     ],
     howWeHelp: [
-      "Pre-incubation roadmaps",
-      "Mentorship pairing",
-      "Resource toolkit access",
+      "Survey design, questionnaire drafting & sample framing",
+      "Trained local enumerators for direct respondent interviews",
+      "Comprehensive data synthesis, analysis, and formal reporting",
     ],
   },
   {
-    id: "institutional-facilitation",
-    title: "Institutional Facilitation",
+    id: "entrepreneurship-training",
+    title: "Entrepreneurship & Training",
     shortDesc:
-      "We collaborate with institutions, government agencies, and organizations to connect businesses with relevant support systems.",
+      "Entrepreneurship development, startup orientation, skills development, capacity building and Training of Trainers (ToT).",
     description:
-      "Facilitating multi-stakeholder partnerships between public development authorities, donor-funded projects, NGOs/INGOs, and the private business ecosystem.",
-    iconName: "Building2",
+      "Empowering founders, aspiring youth, and organizational teams through practical masterclasses, startup bootcamps, and structured capacity-building curriculums.",
+    iconName: "GraduationCap",
     benefits: [
-      "Direct linkage with regional development initiatives",
-      "Policy advocacy and ecosystem representation",
-      "Collaborative project execution",
+      "Certified Training of Trainers (ToT) masterclasses",
+      "Practical startup orientation & venture launch frameworks",
+      "Targeted capacity building for entrepreneurs & professionals",
     ],
     targetAudience: [
-      "Sectoral business associations",
-      "Chambers of commerce",
-      "Development agencies",
+      "First-time entrepreneurs and youth innovators",
+      "Community leaders, field facilitators & trainers",
+      "Micro and small enterprise owners",
     ],
     howWeHelp: [
-      "Program coordination & beneficiary mobilization",
-      "Field monitoring & impact reporting",
-      "Public-private dialogue facilitation",
+      "Structured entrepreneurship bootcamps & modular workshops",
+      "Customized curriculum design adapted to local business context",
+      "Post-training mentorship and implementation support",
     ],
   },
   {
-    id: "marketplace-network",
-    title: "Marketplace & Network Connections",
+    id: "business-planning-project-support",
+    title: "Business Planning & Project Support",
     shortDesc:
-      "We help businesses expand their network by connecting them with partners, markets, and ecosystem stakeholders.",
+      "Feasibility studies, business plans, project reports, market assessment and project documentation.",
     description:
-      "Connecting local producers, manufacturers, and service providers with B2B buyers, institutional procurement channels, and national market networks.",
-    iconName: "Network",
+      "We prepare bankable business plans, detailed project reports (DPR), and commercial feasibility assessments that satisfy institutional criteria and support execution.",
+    iconName: "FileCheck",
     benefits: [
-      "Expanded customer reach beyond local districts",
-      "B2B buyer-seller matchmaking meets",
-      "Supply chain integration",
+      "Thorough financial feasibility and viability assessments",
+      "Investor-grade and bank-ready business plans",
+      "Comprehensive project documentation and compliance dossiers",
     ],
     targetAudience: [
-      "Agri-businesses",
-      "Handicrafts & artisanal producers",
-      "Local manufacturers",
+      "SMEs applying for institutional financing or grants",
+      "Investors evaluating project viability in Madhesh",
+      "Institutions requiring structured project proposals",
     ],
     howWeHelp: [
-      "Trade exhibitions and buyer meets",
-      "E-commerce onboarding facilitation",
-      "Value chain gap bridging",
+      "Technical, commercial, and financial viability appraisal",
+      "Drafting detailed project reports and operational models",
+      "Guidance on regulatory adherence and institutional submission",
+    ],
+  },
+  {
+    id: "events-business-networking",
+    title: "Events & Business Networking",
+    shortDesc:
+      "Workshops, conferences, seminars, business meets, exhibitions, trade fairs, networking programs and event management.",
+    description:
+      "Bridging the gap between entrepreneurs, industry associations, policy stakeholders, and market buyers through high-impact networking events and commercial exhibitions.",
+    iconName: "Users",
+    benefits: [
+      "Direct exposure to B2B buyers, distributors, and partners",
+      "High-level conferences, industry roundtables, and seminars",
+      "Professional turnkey event management and facilitation",
+    ],
+    targetAudience: [
+      "Business associations and trade chambers",
+      "Enterprises seeking new distribution channels",
+      "Public-private development stakeholders",
+    ],
+    howWeHelp: [
+      "Concept development, stakeholder mobilization & logistics",
+      "Structured B2B buyer-seller matchmaking sessions",
+      "Post-event outcomes tracking and partnership facilitation",
     ],
   },
 ];
@@ -236,117 +225,160 @@ export const SERVICES: ServiceItem[] = [
 export const PROCESS_STEPS: StepItem[] = [
   {
     step: "01",
-    title: "Tell Us Your Need",
-    description:
-      "Share your business requirements, current stage, and growth challenges through our online structured form or direct consultation.",
-    iconName: "FileEdit",
+    title: "UNDERSTAND",
+    description: "Understand requirements and ground realities.",
+    iconName: "Search",
   },
   {
     step: "02",
-    title: "We Understand Your Business",
+    title: "ASSESS",
     description:
-      "Our specialist team examines your requirements, audits feasibility, and clearly identifies your specific operational goals.",
-    iconName: "UsersRound",
+      "Collect information and identify challenges and opportunities.",
+    iconName: "ClipboardCheck",
   },
   {
     step: "03",
-    title: "We Identify Opportunities",
-    description:
-      "We research and pinpoint suitable external programs, donor calls, training initiatives, and institutional partners that match your profile.",
-    iconName: "SearchCheck",
+    title: "PLAN",
+    description: "Develop practical and achievable solutions.",
+    iconName: "FileText",
   },
   {
     step: "04",
-    title: "We Connect You",
-    description:
-      "We facilitate introductions, assist in dossier alignment, and connect you with the relevant external institution or support program.",
-    iconName: "Handshake",
+    title: "IMPLEMENT",
+    description: "Work with stakeholders to deliver agreed activities.",
+    iconName: "Briefcase",
+  },
+  {
+    step: "05",
+    title: "DOCUMENT",
+    description: "Maintain proper records and reporting.",
+    iconName: "FileCheck",
+  },
+  {
+    step: "06",
+    title: "IMPROVE",
+    description: "Learn from results and continuously improve.",
+    iconName: "TrendingUp",
   },
 ];
 
-export const FEATURED_PROJECTS: ProjectItem[] = [
+export const WHY_SBDC = [
   {
-    id: "women-entrepreneurship-dev",
-    title: "Women Entrepreneurship Development Program",
+    title: "Local Expertise",
     description:
-      "Empowering women entrepreneurs with skills, mentorship, financial literacy, and market linkages across urban and semi-urban clusters.",
-    fullDescription:
-      "A comprehensive 6-month initiative aimed at accelerating women-owned micro and small enterprises. Participants received dedicated mentoring in digital accounting, brand storytelling, e-commerce listing, and institutional grant readiness.",
-    location: "Kathmandu Valley",
-    year: "2024",
-    category: "Women Empowerment",
-    beneficiariesCount: "120+ Female Founders",
-    partner: "Development Alliance Network",
-    image:
-      "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80",
-    status: "Completed",
-    outcomes: [
-      "94% of participants formalized digital record keeping",
-      "45 enterprises connected with micro-grant opportunities",
-      "12 businesses launched direct online sales channels",
-    ],
+      "Strong understanding of the Birgunj and Madhesh business environment.",
+    iconName: "MapPin",
   },
   {
-    id: "sme-capacity-building",
-    title: "SME Capacity Building Initiative",
+    title: "Professional Approach",
+    description: "Structured, accountable and client-focused execution.",
+    iconName: "ShieldCheck",
+  },
+  {
+    title: "Field Experience",
     description:
-      "Building capacities of small & medium enterprises in business management, finance, supply chain, and digital tools.",
+      "Practical experience in surveys, research and enterprise-related activities.",
+    iconName: "FolderCheck",
+  },
+  {
+    title: "Business Focused",
+    description: "Solutions designed around real business needs.",
+    iconName: "Target",
+  },
+  {
+    title: "Collaborative",
+    description:
+      "Close coordination with clients, stakeholders and project partners.",
+    iconName: "Users",
+  },
+];
+
+export const OUR_COMMITMENT =
+  "We are committed to delivering reliable, practical and result-oriented services with professionalism, integrity and accountability.";
+
+export const FEATURED_PROJECTS: ProjectItem[] = [
+  {
+    id: "helvetas-nepal-enterprise-dev",
+    title: "Business & Enterprise Development Initiative",
+    description:
+      "SBDC is currently working with Helvetas Nepal on business and enterprise development-related activities.",
     fullDescription:
-      "Targeted support for manufacturing and agro-processing SMEs in the Gandaki region to modernize inventory controls, standardize product quality, and satisfy commercial bank credit guidelines.",
-    location: "Pokhara, Gandaki",
-    year: "2024",
-    category: "Capacity Building",
-    beneficiariesCount: "85 SMEs",
-    partner: "Regional Enterprise Fund",
+      "An ongoing, structured collaboration focusing on local enterprise development, capacity building for regional entrepreneurs, and practical business advisory tailored to Madhesh Province ground realities.",
+    location: "Madhesh Province, Nepal",
+    year: "2024 - Present",
+    category: "Enterprise Development",
+    beneficiariesCount: "Regional Enterprises",
+    partner: "Helvetas Nepal",
     image:
       "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=80",
     status: "Active",
     outcomes: [
-      "Average 22% improvement in operational throughput",
-      "Structured credit proposals submitted for 38 SMEs",
-      "ISO compliance workshops conducted for 15 food processors",
+      "Structured enterprise development activities delivered",
+      "Direct engagement with local entrepreneurs and business clusters",
+      "Accountable field execution and milestone reporting",
     ],
   },
   {
-    id: "business-training-youth",
-    title: "Business Training for Youth",
+    id: "nada-madhesh-survey",
+    title: "NADA Madhesh Pradesh Survey & Field Research",
     description:
-      "Hands-on training programs for youth to start and grow sustainable business ventures and social innovations.",
+      "Completed survey-related work with practical exposure to field surveys, primary data collection, respondent interaction, and analytical reporting.",
     fullDescription:
-      "Practical bootcamps offering young aspiring entrepreneurs end-to-end guidance from business ideation to market testing, financial forecasting, and pitch preparation.",
-    location: "Biratnagar, Koshi",
+      "A comprehensive field study covering enterprises and stakeholders across Madhesh Pradesh. The SBDC research team managed questionnaire administration, respondent mobilization, field interviews, and consolidated reporting.",
+    location: "Birgunj & Madhesh Districts",
     year: "2024",
-    category: "Youth Innovation",
-    beneficiariesCount: "200+ Young Innovators",
-    partner: "Youth Innovation Trust",
+    category: "Research & Surveys",
+    beneficiariesCount: "Survey Respondents & Enterprises",
+    partner: "NADA Madhesh Pradesh",
     image:
-      "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80",
     status: "Completed",
     outcomes: [
-      "32 new micro-ventures registered and operational",
-      "Seed mentorship provided to top 15 innovative prototypes",
-      "100% completion rate across 5 intensive cohort modules",
+      "Full coverage of designated field respondent targets",
+      "Rigorous primary data collection and ground verification",
+      "Comprehensive analytical report and findings delivered to NADA",
     ],
   },
   {
-    id: "market-access-linkage",
-    title: "Market Access & Linkage Program",
+    id: "women-entrepreneurship-dev",
+    title: "Women Entrepreneurship Development & Mentoring",
     description:
-      "Connecting local businesses with markets, institutional buyers, and supply chain value networks.",
+      "Empowering women entrepreneurs with skills, startup orientation, financial literacy, and market linkages across Madhesh Province.",
     fullDescription:
-      "Facilitating structured B2B buyer-seller matchmaking sessions between rural agricultural producers and national supermarket chains and wholesale buyers in Lumbini.",
-    location: "Butwal, Lumbini",
-    year: "2023 - 2024",
-    category: "Market Linkage",
-    beneficiariesCount: "60+ Producers & Cooperatives",
-    partner: "Agri-Enterprise Council",
+      "A comprehensive initiative aimed at accelerating women-owned micro and small enterprises. Participants received dedicated mentoring in digital accounting, brand storytelling, and institutional readiness.",
+    location: "Birgunj, Madhesh Province",
+    year: "2024",
+    category: "Entrepreneurship & Training",
+    beneficiariesCount: "120+ Female Founders",
+    partner: "Enterprise Alliance",
     image:
-      "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80",
     status: "Completed",
     outcomes: [
-      "Over NPR 15M in supply contracts facilitated",
-      "Direct cold-storage logistics partnerships established",
-      "Reduced intermediary markups by 18%",
+      "Practical business plan drafting for participating founders",
+      "Hands-on Training of Trainers (ToT) modules completed",
+      "Structured peer-networking circles established",
+    ],
+  },
+  {
+    id: "sme-feasibility-business-planning",
+    title: "SME Feasibility & Business Planning Support",
+    description:
+      "Assisting small and medium enterprises with feasibility studies, detailed project reports (DPR), and commercial planning.",
+    fullDescription:
+      "Working closely with agro-enterprises and local businesses to assess operational viability, prepare bank-ready documentation, and optimize business models.",
+    location: "Parsa & Bara Districts",
+    year: "2024",
+    category: "Business Planning",
+    beneficiariesCount: "45+ Local SMEs",
+    partner: "Madhesh Industry Chamber",
+    image:
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
+    status: "Completed",
+    outcomes: [
+      "Feasibility assessments completed across commercial clusters",
+      "Bank-aligned project documentation prepared for participants",
+      "Operational workflow enhancements implemented",
     ],
   },
 ];
@@ -391,59 +423,75 @@ export const TEAM_MEMBERS: TeamMemberItem[] = [
   {
     id: "minakshi-nanda",
     name: "Minakshi Nanda",
-    role: "Executive Director & Leadership",
-    bio: "Spearheading strategic vision, governance, and institutional collaboration to expand enterprise support and economic development initiatives.",
-    image:
-      "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80",
+    role: "Head of Operations & Business Development",
+    bio: "Directing organizational operations, program execution, stakeholder engagement, and business development initiatives to deliver measurable enterprise impact.",
+    image: "/images/minakshi-nanda.png",
     expertise: [
-      "Strategic Governance",
-      "Institutional Alliances",
-      "Enterprise Development",
+      "Operations Management",
+      "Business Development",
+      "Program Execution",
+      "Institutional Relations",
     ],
   },
   {
     id: "atul-raut",
     name: "Atul Raut",
-    role: "Director – Business Development & Strategy",
-    bio: "Leading enterprise advisory, market linkages, and strategic partner matchmaking for emerging startups and established SMEs across Nepal.",
-    image:
-      "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=80",
+    role: "Founder & Director",
+    bio: "Leading enterprise advisory, strategic partnerships, market linkages, and institutional growth initiatives for emerging ventures and established enterprises across Nepal.",
+    image: "/images/atul-raut.png",
     expertise: [
+      "Strategic Leadership",
       "Business Advisory",
-      "Funding Facilitation",
-      "Market Access",
+      "Enterprise Growth",
+      "Market Linkages",
     ],
   },
   {
     id: "rohit-srivastava",
     name: "Rohit Srivastava",
-    role: "Director – Operations & Digital Innovation",
-    bio: "Managing program operations, digital platform infrastructure, applicant journeys, and scalable workflow systems for sustainable impact.",
-    image:
-      "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80",
+    role: "CTO – Head of Technology and Digital Operations",
+    bio: "Architecting digital infrastructure, technology strategy, system design, and scalable workflow automation to drive seamless business and client operations.",
+    image: "/images/rohit-srivastava.png",
     expertise: [
-      "Operations Management",
+      "Technology Strategy",
+      "Systems Architecture",
       "Digital Transformation",
-      "System Architecture",
+      "Workflow Automation",
     ],
   },
 ];
 
 export const PARTNER_LOGOS = [
-  { name: "USAID", logoText: "USAID", subtitle: "Development Partner" },
   {
-    name: "World Vision",
-    logoText: "World Vision",
-    subtitle: "Community Support",
+    name: "Helvetas Nepal",
+    logoText: "HELVETAS",
+    subtitle: "Enterprise Development Partner",
   },
-  { name: "SNV", logoText: "SNV", subtitle: "Netherlands Dev Org" },
   {
-    name: "Save the Children",
-    logoText: "Save the Children",
-    subtitle: "Youth Livelihoods",
+    name: "NADA Madhesh Pradesh",
+    logoText: "NADA Madhesh",
+    subtitle: "Survey & Research Client",
   },
-  { name: "CARE", logoText: "care", subtitle: "Economic Resilience" },
-  { name: "UNDP Nepal", logoText: "UNDP", subtitle: "Sustainable Dev" },
+  {
+    name: "Business Associations",
+    logoText: "Chambers",
+    subtitle: "Madhesh Business Network",
+  },
+  {
+    name: "Development Partners",
+    logoText: "Dev Partners",
+    subtitle: "Institutions & INGOs",
+  },
+  {
+    name: "Financial Institutions",
+    logoText: "BFIs",
+    subtitle: "Enterprise Financing",
+  },
+  {
+    name: "Enterprise Communities",
+    logoText: "MSMEs",
+    subtitle: "Regional Innovators",
+  },
 ];
 
 export const PROGRAM_TYPES = [

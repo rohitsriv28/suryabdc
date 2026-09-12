@@ -1,50 +1,58 @@
 import React from "react";
 import Link from "next/link";
 import {
-  Coins,
-  Presentation,
   TrendingUp,
-  Sparkles,
-  Building2,
+  Search,
+  GraduationCap,
+  FileCheck,
+  Users,
   ArrowRight,
-  Handshake,
+  Sparkles,
 } from "lucide-react";
-import { SERVICES } from "@/lib/data";
+import { SERVICES, SERVICE_AREAS } from "@/lib/data";
 
 const iconMap: Record<string, React.ReactNode> = {
-  Coins: <Coins className="w-7 h-7 text-brand-orange" />,
-  Presentation: <Presentation className="w-7 h-7 text-brand-orange" />,
   TrendingUp: <TrendingUp className="w-7 h-7 text-brand-orange" />,
-  Sparkles: <Sparkles className="w-7 h-7 text-brand-orange" />,
-  Building2: <Building2 className="w-7 h-7 text-brand-orange" />,
-  Handshake: <Handshake className="w-7 h-7 text-brand-orange" />,
+  Search: <Search className="w-7 h-7 text-brand-orange" />,
+  GraduationCap: <GraduationCap className="w-7 h-7 text-brand-orange" />,
+  FileCheck: <FileCheck className="w-7 h-7 text-brand-orange" />,
+  Users: <Users className="w-7 h-7 text-brand-orange" />,
 };
 
 export default function WhatWeDoSection() {
-  // Taking the first 5 services as shown on Home mockup
-  const homeServices = SERVICES.slice(0, 5);
-
   return (
     <section className="py-20 bg-brand-warm-white relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-14">
           <span className="text-xs font-extrabold uppercase tracking-widest text-brand-orange block mb-2">
             WHAT WE DO
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-brand-maroon tracking-tight">
-            Connecting You to Opportunities for Growth
+            Our Core Services & Practical Solutions
           </h2>
           <p className="text-brand-text-secondary text-[16px] mt-3 leading-relaxed">
-            We act as a collaborative gateway, understanding your requirements
-            and linking your business with specialized external programs,
-            training, and institutions.
+            Supporting entrepreneurs, enterprises, institutions, and development
+            organizations through practical business solutions, research,
+            training, and enterprise development.
           </p>
+
+          {/* Service Area Chips */}
+          <div className="flex flex-wrap justify-center items-center gap-2 mt-6">
+            {SERVICE_AREAS.map((area) => (
+              <span
+                key={area}
+                className="inline-flex items-center text-[12px] font-medium px-3 py-1 rounded-full bg-white border border-brand-border text-brand-maroon shadow-2xs"
+              >
+                {area}
+              </span>
+            ))}
+          </div>
         </div>
 
-        {/* 5 Service Cards Grid */}
+        {/* 5 Core Service Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-          {homeServices.map((service, index) => (
+          {SERVICES.map((service) => (
             <div
               key={service.id}
               className="bg-white rounded-2xl p-6 border border-brand-border/80 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col items-center text-center group"
@@ -84,7 +92,7 @@ export default function WhatWeDoSection() {
             href="/services"
             className="inline-flex items-center gap-2 text-sm font-bold text-brand-maroon hover:text-brand-orange border-b-2 border-brand-orange pb-0.5 transition-colors"
           >
-            <span>Explore all our specialized service areas</span>
+            <span>Explore full service breakdowns and methodology</span>
             <ArrowRight className="w-4 h-4" />
           </Link>
         </div>

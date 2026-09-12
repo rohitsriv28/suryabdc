@@ -1,10 +1,9 @@
 import React from "react";
 import Link from "next/link";
 import { FileText } from "lucide-react";
-import { BRAND } from "@/lib/constants";
 
 export const metadata = {
-  title: "Terms of Use | Surya Business Development Centre (SBDC)",
+  title: "Terms of Use | Surya Business Development Center (SBDC)",
   description: "Terms and conditions of website use for SBDC.",
 };
 
@@ -30,13 +29,13 @@ export default function TermsOfServicePage() {
                 Terms of Use
               </h1>
               <p className="text-xs text-brand-text-muted mt-0.5">
-                Surya Business Development Centre Pvt. Ltd. (SBDC)
+                Surya Business Development Center Pvt. Ltd. (SBDC)
               </p>
             </div>
           </div>
 
           <p>
-            Welcome to the official website of Surya Business Development Centre
+            Welcome to the official website of Surya Business Development Center
             Pvt. Ltd. By accessing or using our website, you agree to comply
             with and be bound by the following terms and conditions.
           </p>

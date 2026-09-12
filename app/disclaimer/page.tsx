@@ -1,13 +1,13 @@
 import React from "react";
 import Link from "next/link";
-import { ShieldAlert, AlertTriangle, CheckCircle2 } from "lucide-react";
+import { ShieldAlert, AlertTriangle } from "lucide-react";
 import { BRAND } from "@/lib/constants";
 
 export const metadata = {
   title:
-    "Facilitation & Financial Disclaimer | Surya Business Development Centre (SBDC)",
+    "Facilitation & Financial Disclaimer | Surya Business Development Center (SBDC)",
   description:
-    "Official legal and operating disclaimer regarding SBDC's role as a facilitator and mediator.",
+    "Official legal and operating disclaimer regarding SBDC's role as a facilitator and consulting partner.",
 };
 
 export default function DisclaimerPage() {
@@ -56,12 +56,12 @@ export default function DisclaimerPage() {
                 1. Nature of Services
               </h2>
               <p>
-                Surya Business Development Centre Pvt. Ltd. provides business
-                development consulting, capacity-building workshops, project
-                advisory, and institutional mediation. SBDC does not function as
-                a bank, financial institution, licensed money lender, deposit
-                collector, or direct grant disbursing entity under the laws of
-                Nepal.
+                Surya Business Development Center Pvt. Ltd. provides business
+                development consulting, capacity-building workshops, research,
+                field surveys, project advisory, and institutional facilitation.
+                SBDC does not function as a bank, financial institution,
+                licensed money lender, deposit collector, or direct grant
+                disbursing entity under the laws of Nepal.
               </p>
             </section>
 

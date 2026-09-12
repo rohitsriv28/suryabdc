@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import { MessageCircle, X } from "lucide-react";
+import { X } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 import { BRAND } from "@/lib/constants";
 
 export default function FloatingWhatsApp() {
@@ -37,7 +38,7 @@ export default function FloatingWhatsApp() {
         className="w-14 h-14 bg-[#25D366] hover:bg-[#20bd5a] text-white rounded-full shadow-lg hover:shadow-2xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 active:scale-95 group relative"
       >
         <span className="absolute w-full h-full rounded-full bg-[#25D366] animate-ping opacity-30 group-hover:opacity-0" />
-        <MessageCircle className="w-7 h-7 fill-white text-white" />
+        <FaWhatsapp className="w-8 h-8 text-white relative z-10" />
       </a>
     </div>
   );

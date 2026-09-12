@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight, Sparkles, SunMedium } from "lucide-react";
 
 interface CtaBannerProps {
   title?: string;
@@ -19,20 +19,8 @@ export default function CtaBannerSection({
     <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mb-6 sm:-mb-10 relative z-20">
       <div className="bg-gradient-to-r from-brand-orange to-brand-orange-deep rounded-3xl p-6 sm:p-12 shadow-2xl relative overflow-hidden text-white flex flex-col lg:flex-row items-center justify-between gap-6 sm:gap-8 border-2 border-brand-orange-300/40">
         {/* Decorative Sun Watermark in background */}
-        <div className="absolute -right-12 -bottom-16 w-80 h-80 opacity-15 pointer-events-none">
-          <svg viewBox="0 0 100 100" className="w-full h-full fill-white">
-            <circle cx="50" cy="50" r="30" />
-            <g stroke="white" strokeWidth="4" strokeLinecap="round">
-              <line x1="50" y1="5" x2="50" y2="15" />
-              <line x1="50" y1="85" x2="50" y2="95" />
-              <line x1="5" y1="50" x2="15" y2="50" />
-              <line x1="85" y1="50" x2="95" y2="50" />
-              <line x1="18" y1="18" x2="25" y2="25" />
-              <line x1="75" y1="75" x2="82" y2="82" />
-              <line x1="18" y1="82" x2="25" y2="75" />
-              <line x1="75" y1="25" x2="82" y2="18" />
-            </g>
-          </svg>
+        <div className="absolute -right-12 -bottom-16 w-80 h-80 opacity-15 pointer-events-none flex items-center justify-center">
+          <SunMedium className="w-full h-full text-white stroke-[1.2]" />
         </div>
 
         {/* Text column */}

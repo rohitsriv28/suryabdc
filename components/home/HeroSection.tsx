@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { ArrowRight, ShieldAlert, CheckCircle2, Sparkles } from "lucide-react";
 
 export default function HeroSection() {
@@ -16,7 +15,7 @@ export default function HeroSection() {
             {/* Pill Badge */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-orange-tint border border-brand-orange-200 text-brand-orange-deep text-xs font-bold uppercase tracking-wider">
               <Sparkles className="w-3.5 h-3.5 text-brand-orange" />
-              <span>Official Business Support Gateway</span>
+              <span>Estd. 2083 • Birgunj, Madhesh Province, Nepal</span>
             </div>
 
             {/* Main Headline */}
@@ -29,9 +28,9 @@ export default function HeroSection() {
 
             {/* Subtitle */}
             <p className="text-[15px] sm:text-[17px] text-brand-text-secondary leading-relaxed max-w-xl">
-              We help aspiring entrepreneurs and existing businesses access
-              funding opportunities, training, and capacity-building programs by
-              connecting them with the right organizations.
+              Practical solutions for entrepreneurs, enterprises, institutions,
+              and development organizations through business development, field
+              research, training, and enterprise consulting.
             </p>
 
             {/* CTA Buttons */}

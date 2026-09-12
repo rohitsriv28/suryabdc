@@ -4,7 +4,7 @@ import { Shield } from "lucide-react";
 import { BRAND } from "@/lib/constants";
 
 export const metadata = {
-  title: "Privacy Policy | Surya Business Development Centre (SBDC)",
+  title: "Privacy Policy | Surya Business Development Center (SBDC)",
   description: "Privacy Policy and data governance principles for SBDC.",
 };
 
@@ -30,13 +30,13 @@ export default function PrivacyPolicyPage() {
                 Privacy Policy
               </h1>
               <p className="text-xs text-brand-text-muted mt-0.5">
-                Surya Business Development Centre Pvt. Ltd. (SBDC)
+                Surya Business Development Center Pvt. Ltd. (SBDC)
               </p>
             </div>
           </div>
 
           <p>
-            This Privacy Policy describes how Surya Business Development Centre
+            This Privacy Policy describes how Surya Business Development Center
             Pvt. Ltd. (&ldquo;SBDC&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;)
             collects, uses, protects, and discloses personal and business
             information when you use our official website and business
