@@ -1,6 +1,12 @@
 <p align="center">
-  <img src="./public/logos/SuryaBDC-banner.png" alt="Surya Business Development Center Pvt. Ltd." width="680" />
+  <a href="https://www.suryabdc.com.np/" target="_blank" rel="noopener noreferrer">
+    <img src="./public/logos/SuryaBDC-banner.png" alt="Surya Business Development Center Pvt. Ltd." width="680" />
+  </a>
 </p>
+
+<h3 align="center">
+  🌐 <a href="https://www.suryabdc.com.np/" target="_blank" rel="noopener noreferrer">https://www.suryabdc.com.np/</a>
+</h3>
 
 <p align="center">
   <img src="https://ziadoua.github.io/m3-Markdown-Badges/badges/NextJS/nextjs2.svg" alt="Next.js" />
@@ -8,14 +14,16 @@
   <img src="https://ziadoua.github.io/m3-Markdown-Badges/badges/TypeScript/typescript2.svg" alt="TypeScript" />
   <img src="https://ziadoua.github.io/m3-Markdown-Badges/badges/TailwindCSS/tailwindcss2.svg" alt="Tailwind CSS" />
   <img src="https://ziadoua.github.io/m3-Markdown-Badges/badges/NodeJS/nodejs2.svg" alt="Node.js" />
-  <img src="https://ziadoua.github.io/m3-Markdown-Badges/badges/WhatsApp/whatsapp2.svg" alt="WhatsApp" />
+  <img src="https://ziadoua.github.io/m3-Markdown-Badges/badges/Cloudflare/cloudflare2.svg" alt="Cloudflare" />
   <img src="https://ziadoua.github.io/m3-Markdown-Badges/badges/Vercel/vercel2.svg" alt="Vercel" />
+  <img src="https://ziadoua.github.io/m3-Markdown-Badges/badges/WhatsApp/whatsapp2.svg" alt="WhatsApp" />
 </p>
 
 ---
 
 # Surya Business Development Center (SBDC) Web Portal
 
+> **🌐 Official Canonical Website:** [https://www.suryabdc.com.np/](https://www.suryabdc.com.np/)  
 > **EMPOWERING BUSINESS. BUILDING FUTURES.**  
 > Official corporate portal, enterprise impact platform, and structured business-facilitation gateway for **Surya Business Development Center Pvt. Ltd.** (Estd. 2083 B.S.), headquartered in **Birgunj, Parsa, Madhesh Province, Nepal**.
 
@@ -164,21 +172,24 @@ The platform is designed around the **60-30-10 Rule** with rich visual tokens:
   <img src="https://ziadoua.github.io/m3-Markdown-Badges/badges/Git/git2.svg" alt="Git" />
   <img src="https://ziadoua.github.io/m3-Markdown-Badges/badges/Github/github2.svg" alt="GitHub" />
   <img src="https://ziadoua.github.io/m3-Markdown-Badges/badges/ESLint/eslint2.svg" alt="ESLint" />
-  <img src="https://ziadoua.github.io/m3-Markdown-Badges/badges/Prettier/prettier2.svg" alt="Prettier" />
-  <img src="https://ziadoua.github.io/m3-Markdown-Badges/badges/Figma/figma2.svg" alt="Figma" />
-  <img src="https://ziadoua.github.io/m3-Markdown-Badges/badges/WhatsApp/whatsapp2.svg" alt="WhatsApp" />
+  <img src="https://ziadoua.github.io/m3-Markdown-Badges/badges/Cloudflare/cloudflare2.svg" alt="Cloudflare" />
   <img src="https://ziadoua.github.io/m3-Markdown-Badges/badges/Vercel/vercel2.svg" alt="Vercel" />
+  <img src="https://ziadoua.github.io/m3-Markdown-Badges/badges/WhatsApp/whatsapp2.svg" alt="WhatsApp" />
 </p>
 
-| Category                   | Technologies & Tools                                                                                                           |
-| :------------------------- | :----------------------------------------------------------------------------------------------------------------------------- |
-| **Core Framework**         | [Next.js 15](https://nextjs.org/) (App Router, Server & Client Components)                                                     |
-| **UI Library**             | [React 19](https://react.dev/)                                                                                                 |
-| **Language**               | [TypeScript](https://www.typescriptlang.org/) (Strict Mode)                                                                    |
-| **Styling & Design**       | [Tailwind CSS v4](https://tailwindcss.com/) with `@tailwindcss/postcss`, [Figma](https://figma.com) Tokens                     |
-| **Iconography**            | [Lucide React](https://lucide.dev/) & [React Icons](https://react-icons.github.io/react-icons/) (`FaWhatsapp`)                 |
-| **Runtime & Tooling**      | [Bun](https://bun.sh/), [Node.js](https://nodejs.org/), [npm](https://npmjs.com), [Git](https://git-scm.com), ESLint, Prettier |
-| **Communication & Deploy** | WhatsApp Direct Integration, [Vercel](https://vercel.com) Edge Deployment                                                      |
+| Domain / Layer         | Technology & Tools                                                                                   | Version / Details                                                            |
+| :--------------------- | :--------------------------------------------------------------------------------------------------- | :--------------------------------------------------------------------------- |
+| **Core Framework**     | [Next.js](https://nextjs.org/)                                                                       | `16.3.3` (App Router, Server Components & Dynamic Metadata)                  |
+| **UI Library**         | [React](https://react.dev/) / [React DOM](https://react.dev/)                                        | `19.2.8` (React 19 Architecture)                                             |
+| **Language**           | [TypeScript](https://www.typescriptlang.org/)                                                        | `^5` (Strict Type System)                                                    |
+| **Styling & CSS**      | [Tailwind CSS](https://tailwindcss.com/)                                                             | `v4` via `@tailwindcss/postcss`                                              |
+| **Web Analytics**      | [@vercel/analytics](https://vercel.com/analytics)                                                    | `^2.0.1` (Real-time privacy-compliant visitor analytics)                     |
+| **Iconography**        | [Lucide React](https://lucide.dev/) & [React Icons](https://react-icons.github.io/react-icons/)      | `lucide-react` (`^1.37.0`), `react-icons` (`^5.7.0`)                         |
+| **Class Utilities**    | [clsx](https://github.com/lukeed/clsx) & [tailwind-merge](https://github.com/dcastil/tailwind-merge) | Dynamic class resolution without style clashes                               |
+| **SEO & Indexing**     | Native Next.js Dynamic SEO                                                                           | Dynamic XML Sitemap (`/sitemap.xml`), Robots (`/robots.txt`), Canonical tags |
+| **DNS & Security**     | [Cloudflare](https://www.cloudflare.com/)                                                            | DNS Management, SSL/TLS, Google Search Console DNS Verification              |
+| **Hosting & Cloud**    | [Vercel](https://vercel.com/)                                                                        | Edge Deployment, HTTP 308 apex-to-www redirection, automated Git CI/CD       |
+| **Runtimes & Tooling** | [Bun](https://bun.sh/), [Node.js](https://nodejs.org/), [npm](https://npmjs.com/)                    | Multi-runtime execution, ESLint 9, Git version control                       |
 
 ---
 

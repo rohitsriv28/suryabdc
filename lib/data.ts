@@ -2,14 +2,22 @@ export interface PageMetadataConfig {
   title: string;
   description: string;
   canonical: string;
-  changeFrequency?: "always" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "never";
+  changeFrequency?:
+    | "always"
+    | "hourly"
+    | "daily"
+    | "weekly"
+    | "monthly"
+    | "yearly"
+    | "never";
   priority?: number;
 }
 
 export const SITE_METADATA = {
   baseUrl: "https://www.suryabdc.com.np",
   siteName: "Surya Business Development Center",
-  defaultTitle: "Surya Business Development Center (SBDC) | Empowering Businesses. Building Futures.",
+  defaultTitle:
+    "Surya Business Development Center (SBDC) | Empowering Businesses. Building Futures.",
   titleTemplate: "%s | Surya Business Development Center (SBDC)",
   defaultDescription:
     "Official corporate portal of Surya Business Development Center Pvt. Ltd. (SBDC). Supporting entrepreneurs, enterprises, institutions, and development organizations through practical business solutions, research, training, and enterprise development.",
@@ -18,7 +26,8 @@ export const SITE_METADATA = {
 
 export const PAGE_METADATA: Record<string, PageMetadataConfig> = {
   home: {
-    title: "Surya Business Development Center (SBDC) | Empowering Businesses. Building Futures.",
+    title:
+      "Surya Business Development Center (SBDC) | Empowering Businesses. Building Futures.",
     description:
       "Official corporate portal of Surya Business Development Center Pvt. Ltd. (SBDC). Supporting entrepreneurs, enterprises, institutions, and development organizations through practical business solutions, research, training, and enterprise development.",
     canonical: "/",
