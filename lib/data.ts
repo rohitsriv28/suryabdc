@@ -7,7 +7,7 @@ export interface PageMetadataConfig {
 }
 
 export const SITE_METADATA = {
-  baseUrl: "https://suryabdc.com.np",
+  baseUrl: "https://www.suryabdc.com.np",
   siteName: "Surya Business Development Center",
   defaultTitle: "Surya Business Development Center (SBDC) | Empowering Businesses. Building Futures.",
   titleTemplate: "%s | Surya Business Development Center (SBDC)",

@@ -4,6 +4,15 @@ All notable changes to the **Surya Business Development Center (SBDC) Web Portal
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.2] - 2026-09-13
+
+### 🔄 Changed
+* **Canonical Hostname Harmonization**:
+  * Harmonized canonical production hostname to `https://www.suryabdc.com.np` across `SITE_METADATA` (`lib/data.ts`), aligning canonical tags, Open Graph URLs, XML sitemap URLs (`/sitemap.xml`), and `robots.txt` directly with Vercel's primary domain configuration.
+  * Preserved apex domain redirect (`https://suryabdc.com.np` → 308 → `https://www.suryabdc.com.np`) without canonical/redirect mismatch for search engine indexation.
+
+---
+
 ## [1.1.1] - 2026-09-13
 
 ### 🌟 Added
