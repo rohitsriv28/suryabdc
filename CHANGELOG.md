@@ -4,6 +4,23 @@ All notable changes to the **Surya Business Development Center (SBDC) Web Portal
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.1] - 2026-09-13
+
+### 🌟 Added
+* **Production SEO & Indexing Architecture Overhaul**:
+  * **Dynamic Sitemap Generator (`app/sitemap.ts`)**: Generates an automated, valid XML sitemap at `https://suryabdc.com.np/sitemap.xml` referencing all 12 verified public routes with weekly/monthly update frequencies and priorities.
+  * **Search Engine Crawl Directives (`app/robots.ts`)**: Generates `https://suryabdc.com.np/robots.txt` allowing all search engines (`User-Agent: * Allow: /`) and pointing directly to the canonical sitemap.
+  * **Centralized Metadata Source of Truth (`lib/data.ts`)**: Added `SITE_METADATA` and `PAGE_METADATA` configurations to eliminate hardcoded duplicate meta tags and synchronize page metadata with the sitemap.
+  * **Canonical URL & Indexing Strategy**: Configured `metadataBase: new URL("https://suryabdc.com.np")`, explicit canonical `<link>` tags, and Googlebot directives across RootLayout and all pages.
+  * **Dedicated Route Layouts for Client Components**: Added server layout wrappers for `/contact`, `/projects`, `/gallery`, and `/submit-requirement` to provide full server-rendered SEO titles, descriptions, and canonical links for `"use client"` pages.
+* **Vercel Web Analytics**:
+  * Integrated `@vercel/analytics` (`<Analytics />` from `@vercel/analytics/next`) in RootLayout for real-time privacy-friendly traffic and pageview telemetry.
+
+### 🔄 Changed
+* Standardized project package name to `"surya_bdc"` in `package.json`.
+* Refactored all page routes (`about`, `services`, `activities`, `impact`, `disclaimer`, `privacy-policy`, `terms-of-service`) to consume centralized `PAGE_METADATA`.
+* Updated `README.md` repository tree and architecture guide with the new SEO files.
+
 ---
 
 ## [1.1.0] - 2026-09-12

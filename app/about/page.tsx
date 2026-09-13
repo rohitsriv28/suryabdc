@@ -1,4 +1,5 @@
 import React from "react";
+import type { Metadata } from "next";
 import Link from "next/link";
 import {
   Target,
@@ -23,13 +24,16 @@ import {
   PROCESS_STEPS,
   WHY_SBDC,
   OUR_COMMITMENT,
+  PAGE_METADATA,
 } from "@/lib/data";
 import { BRAND } from "@/lib/constants";
 
-export const metadata = {
-  title: "About Us | Surya Business Development Center (SBDC)",
-  description:
-    "Learn about SBDC's mission, vision, 6-stage approach, Why SBDC pillars, and leadership team facilitating business growth across Nepal.",
+export const metadata: Metadata = {
+  title: PAGE_METADATA.about.title,
+  description: PAGE_METADATA.about.description,
+  alternates: {
+    canonical: PAGE_METADATA.about.canonical,
+  },
 };
 
 const approachIcons: Record<string, React.ReactNode> = {

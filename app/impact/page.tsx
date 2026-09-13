@@ -1,14 +1,17 @@
 import React from "react";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Sparkles, Quote, ShieldCheck } from "lucide-react";
 import StatsBarSection from "@/components/home/StatsBarSection";
-import { TESTIMONIALS } from "@/lib/data";
+import { TESTIMONIALS, PAGE_METADATA } from "@/lib/data";
 import CtaBannerSection from "@/components/home/CtaBannerSection";
 
-export const metadata = {
-  title: "Impact & Stories | Surya Business Development Center (SBDC)",
-  description:
-    "Discover the measurable outcomes, beneficiary stories, and enterprise impact facilitated by SBDC across Nepal.",
+export const metadata: Metadata = {
+  title: PAGE_METADATA.impact.title,
+  description: PAGE_METADATA.impact.description,
+  alternates: {
+    canonical: PAGE_METADATA.impact.canonical,
+  },
 };
 
 export default function ImpactPage() {

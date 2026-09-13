@@ -1,10 +1,15 @@
 import React from "react";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { FileText } from "lucide-react";
+import { PAGE_METADATA } from "@/lib/data";
 
-export const metadata = {
-  title: "Terms of Use | Surya Business Development Center (SBDC)",
-  description: "Terms and conditions of website use for SBDC.",
+export const metadata: Metadata = {
+  title: PAGE_METADATA.termsOfService.title,
+  description: PAGE_METADATA.termsOfService.description,
+  alternates: {
+    canonical: PAGE_METADATA.termsOfService.canonical,
+  },
 };
 
 export default function TermsOfServicePage() {

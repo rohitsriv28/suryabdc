@@ -1,4 +1,5 @@
 import React from "react";
+import type { Metadata } from "next";
 import Link from "next/link";
 import {
   TrendingUp,
@@ -19,13 +20,16 @@ import {
   SERVICE_AREAS,
   PROGRAM_TYPES,
   PROCESS_STEPS,
+  PAGE_METADATA,
 } from "@/lib/data";
 import CtaBannerSection from "@/components/home/CtaBannerSection";
 
-export const metadata = {
-  title: "What We Do & Services | Surya Business Development Center (SBDC)",
-  description:
-    "Explore SBDC's core services: Business Development & Consulting, Research & Surveys, Entrepreneurship & Training, Business Planning, and Events.",
+export const metadata: Metadata = {
+  title: PAGE_METADATA.services.title,
+  description: PAGE_METADATA.services.description,
+  alternates: {
+    canonical: PAGE_METADATA.services.canonical,
+  },
 };
 
 const serviceIcons: Record<string, React.ReactNode> = {

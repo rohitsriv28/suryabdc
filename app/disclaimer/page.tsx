@@ -1,13 +1,16 @@
 import React from "react";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ShieldAlert, AlertTriangle } from "lucide-react";
 import { BRAND } from "@/lib/constants";
+import { PAGE_METADATA } from "@/lib/data";
 
-export const metadata = {
-  title:
-    "Facilitation & Financial Disclaimer | Surya Business Development Center (SBDC)",
-  description:
-    "Official legal and operating disclaimer regarding SBDC's role as a facilitator and consulting partner.",
+export const metadata: Metadata = {
+  title: PAGE_METADATA.disclaimer.title,
+  description: PAGE_METADATA.disclaimer.description,
+  alternates: {
+    canonical: PAGE_METADATA.disclaimer.canonical,
+  },
 };
 
 export default function DisclaimerPage() {

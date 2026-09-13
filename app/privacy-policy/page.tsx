@@ -1,11 +1,16 @@
 import React from "react";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Shield } from "lucide-react";
 import { BRAND } from "@/lib/constants";
+import { PAGE_METADATA } from "@/lib/data";
 
-export const metadata = {
-  title: "Privacy Policy | Surya Business Development Center (SBDC)",
-  description: "Privacy Policy and data governance principles for SBDC.",
+export const metadata: Metadata = {
+  title: PAGE_METADATA.privacyPolicy.title,
+  description: PAGE_METADATA.privacyPolicy.description,
+  alternates: {
+    canonical: PAGE_METADATA.privacyPolicy.canonical,
+  },
 };
 
 export default function PrivacyPolicyPage() {

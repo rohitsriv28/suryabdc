@@ -236,27 +236,29 @@ ngrok http --host-header=rewrite 3000
 ```
 suryabdc-portal/
 ├── app/
-│   ├── layout.tsx              # Root layout (Plus Jakarta Sans, Navbar, Footer, WhatsApp)
+│   ├── layout.tsx              # Root layout (Plus Jakarta Sans, Navbar, Footer, WhatsApp, Vercel Analytics, Base Metadata)
 │   ├── globals.css             # Tailwind v4 theme definitions and custom classes
 │   ├── page.tsx                # Corporate Homepage
 │   ├── about/page.tsx          # Institutional profile, history, leadership team
 │   ├── services/page.tsx       # 5 Service pillars, 9 service areas, opportunity types
-│   ├── submit-requirement/     # Structured business requirement intake form
-│   ├── projects/page.tsx       # Filterable projects and case studies
+│   ├── submit-requirement/     # Structured business requirement intake form & layout
+│   ├── projects/               # Filterable projects, case studies & layout
 │   ├── activities/page.tsx     # Activity calendar & workshop records
 │   ├── impact/page.tsx         # Verified impact metrics & outcomes
-│   ├── gallery/page.tsx        # High-res photo gallery with lightbox modal
-│   ├── contact/page.tsx        # Contact details, interactive message form, WhatsApp link
+│   ├── gallery/                # High-res photo gallery with lightbox modal & layout
+│   ├── contact/                # Contact details, inquiry form, WhatsApp link & layout
 │   ├── disclaimer/page.tsx     # Facilitation & regulatory disclaimer
 │   ├── privacy-policy/page.tsx # Corporate privacy policy
-│   └── terms-of-service/       # Terms of service
+│   ├── terms-of-service/       # Terms of service
+│   ├── robots.ts               # Dynamic robots.txt with sitemap reference
+│   └── sitemap.ts              # Dynamic sitemap.xml generator (12 verified canonical routes)
 ├── components/
 │   ├── layout/                 # Navbar, Footer, FloatingWhatsApp
 │   ├── ui/                     # Logo, Button, Modal, Lightbox, Badges
 │   └── home/                   # Hero, WhatWeDo, HowItWorks, FeaturedProjects, StatsBar, etc.
 ├── lib/
 │   ├── constants.ts            # Brand meta, contact info (Birgunj), navigation links
-│   └── data.ts                 # Service pillars, leadership team, projects, testimonials
+│   └── data.ts                 # Centralized SITE_METADATA, PAGE_METADATA, Services, Team, Projects
 ├── public/
 │   ├── favicon.png             # Official brand favicon
 │   ├── logos/

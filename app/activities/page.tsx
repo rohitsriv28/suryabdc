@@ -1,13 +1,16 @@
 import React from "react";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Calendar, MapPin, Users, Sparkles, CheckCircle2 } from "lucide-react";
-import { ACTIVITIES } from "@/lib/data";
+import { ACTIVITIES, PAGE_METADATA } from "@/lib/data";
 import CtaBannerSection from "@/components/home/CtaBannerSection";
 
-export const metadata = {
-  title: "Activities & Events | Surya Business Development Center (SBDC)",
-  description:
-    "Explore our recent workshops, training seminars, networking forums, and field development activities.",
+export const metadata: Metadata = {
+  title: PAGE_METADATA.activities.title,
+  description: PAGE_METADATA.activities.description,
+  alternates: {
+    canonical: PAGE_METADATA.activities.canonical,
+  },
 };
 
 export default function ActivitiesPage() {

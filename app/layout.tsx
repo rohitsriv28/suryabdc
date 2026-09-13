@@ -4,6 +4,8 @@ import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import FloatingWhatsApp from "@/components/layout/FloatingWhatsApp";
+import { Analytics } from "@vercel/analytics/next";
+import { SITE_METADATA, PAGE_METADATA } from "@/lib/data";
 
 const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -12,10 +14,12 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title:
-    "Surya Business Development Center (SBDC) | Empowering Businesses. Building Futures.",
-  description:
-    "Official corporate portal of Surya Business Development Center Pvt. Ltd. (SBDC). Supporting entrepreneurs, enterprises, institutions, and development organizations through practical business solutions, research, training, and enterprise development.",
+  metadataBase: new URL(SITE_METADATA.baseUrl),
+  title: {
+    default: SITE_METADATA.defaultTitle,
+    template: SITE_METADATA.titleTemplate,
+  },
+  description: SITE_METADATA.defaultDescription,
   keywords: [
     "SBDC",
     "Surya Business Development Center",
@@ -26,16 +30,46 @@ export const metadata: Metadata = {
     "Birgunj Parsa Madhesh Province Nepal",
     "Nepal",
   ],
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   icons: {
     icon: [{ url: "/favicon.png", type: "image/png" }],
     shortcut: "/favicon.png",
     apple: "/favicon.png",
   },
   openGraph: {
-    title: "Surya Business Development Center (SBDC)",
-    description:
-      "Empowering Businesses. Building Futures. Practical solutions for entrepreneurs, enterprises, institutions and development organizations.",
+    title: SITE_METADATA.defaultTitle,
+    description: SITE_METADATA.defaultDescription,
+    url: SITE_METADATA.baseUrl,
+    siteName: SITE_METADATA.siteName,
+    locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: SITE_METADATA.ogImage,
+        width: 1200,
+        height: 630,
+        alt: SITE_METADATA.siteName,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE_METADATA.defaultTitle,
+    description: SITE_METADATA.defaultDescription,
+    images: [SITE_METADATA.ogImage],
   },
 };
 
@@ -55,6 +89,7 @@ export default function RootLayout({
         <main className="flex-grow">{children}</main>
         <Footer />
         <FloatingWhatsApp />
+        <Analytics />
       </body>
     </html>
   );

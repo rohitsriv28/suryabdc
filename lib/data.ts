@@ -1,3 +1,120 @@
+export interface PageMetadataConfig {
+  title: string;
+  description: string;
+  canonical: string;
+  changeFrequency?: "always" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "never";
+  priority?: number;
+}
+
+export const SITE_METADATA = {
+  baseUrl: "https://suryabdc.com.np",
+  siteName: "Surya Business Development Center",
+  defaultTitle: "Surya Business Development Center (SBDC) | Empowering Businesses. Building Futures.",
+  titleTemplate: "%s | Surya Business Development Center (SBDC)",
+  defaultDescription:
+    "Official corporate portal of Surya Business Development Center Pvt. Ltd. (SBDC). Supporting entrepreneurs, enterprises, institutions, and development organizations through practical business solutions, research, training, and enterprise development.",
+  ogImage: "/logos/SuryaBDC-banner.png",
+};
+
+export const PAGE_METADATA: Record<string, PageMetadataConfig> = {
+  home: {
+    title: "Surya Business Development Center (SBDC) | Empowering Businesses. Building Futures.",
+    description:
+      "Official corporate portal of Surya Business Development Center Pvt. Ltd. (SBDC). Supporting entrepreneurs, enterprises, institutions, and development organizations through practical business solutions, research, training, and enterprise development.",
+    canonical: "/",
+    changeFrequency: "weekly",
+    priority: 1.0,
+  },
+  about: {
+    title: "About Us",
+    description:
+      "Learn about SBDC's mission, vision, 6-stage approach, Why SBDC pillars, and leadership team facilitating business growth across Nepal.",
+    canonical: "/about",
+    changeFrequency: "monthly",
+    priority: 0.8,
+  },
+  services: {
+    title: "What We Do & Services",
+    description:
+      "Explore SBDC's 5 core pillars: Business Support & Advisory, Training & Capacity Building, Market Linkage, Access to Finance, and Technology Enablement.",
+    canonical: "/services",
+    changeFrequency: "weekly",
+    priority: 0.9,
+  },
+  submitRequirement: {
+    title: "Submit Business Requirement",
+    description:
+      "Submit your enterprise support, capacity building, or business facilitation requirement to Surya Business Development Center (SBDC).",
+    canonical: "/submit-requirement",
+    changeFrequency: "monthly",
+    priority: 0.8,
+  },
+  projects: {
+    title: "Projects & Case Studies",
+    description:
+      "Explore case studies, grassroots initiatives, and enterprise development projects facilitated by Surya Business Development Center across Nepal.",
+    canonical: "/projects",
+    changeFrequency: "weekly",
+    priority: 0.7,
+  },
+  activities: {
+    title: "Activities & Events",
+    description:
+      "Explore our recent workshops, training seminars, networking forums, and enterprise development activities across Nepal.",
+    canonical: "/activities",
+    changeFrequency: "weekly",
+    priority: 0.7,
+  },
+  impact: {
+    title: "Impact & Stories",
+    description:
+      "Discover the measurable outcomes, beneficiary stories, and enterprise impact facilitated by SBDC across Nepal.",
+    canonical: "/impact",
+    changeFrequency: "monthly",
+    priority: 0.7,
+  },
+  gallery: {
+    title: "Photo Gallery",
+    description:
+      "Visual archive and moments from Surya Business Development Center workshops, enterprise training sessions, institutional forums, and fieldwork.",
+    canonical: "/gallery",
+    changeFrequency: "monthly",
+    priority: 0.6,
+  },
+  contact: {
+    title: "Contact Us",
+    description:
+      "Get in touch with Surya Business Development Center Pvt. Ltd. (SBDC) in Birgunj, Parsa, Nepal. Send inquiries, connect via WhatsApp, or visit our office.",
+    canonical: "/contact",
+    changeFrequency: "monthly",
+    priority: 0.8,
+  },
+  disclaimer: {
+    title: "Facilitation & Financial Disclaimer",
+    description:
+      "Official legal and operating disclaimer regarding SBDC's role as an independent business facilitator, advisory firm, and capacity builder.",
+    canonical: "/disclaimer",
+    changeFrequency: "yearly",
+    priority: 0.3,
+  },
+  privacyPolicy: {
+    title: "Privacy Policy",
+    description:
+      "Official Privacy Policy and data governance principles for Surya Business Development Center Pvt. Ltd.",
+    canonical: "/privacy-policy",
+    changeFrequency: "yearly",
+    priority: 0.3,
+  },
+  termsOfService: {
+    title: "Terms of Use",
+    description:
+      "Terms and conditions of website use for Surya Business Development Center Pvt. Ltd.",
+    canonical: "/terms-of-service",
+    changeFrequency: "yearly",
+    priority: 0.3,
+  },
+};
+
 export interface ServiceItem {
   id: string;
   title: string;
@@ -421,19 +538,6 @@ export const TESTIMONIALS: TestimonialItem[] = [
 
 export const TEAM_MEMBERS: TeamMemberItem[] = [
   {
-    id: "minakshi-nanda",
-    name: "Minakshi Nanda",
-    role: "Head of Operations & Business Development",
-    bio: "Directing organizational operations, program execution, stakeholder engagement, and business development initiatives to deliver measurable enterprise impact.",
-    image: "/images/minakshi-nanda.png",
-    expertise: [
-      "Operations Management",
-      "Business Development",
-      "Program Execution",
-      "Institutional Relations",
-    ],
-  },
-  {
     id: "atul-raut",
     name: "Atul Raut",
     role: "Founder & Director",
@@ -444,6 +548,19 @@ export const TEAM_MEMBERS: TeamMemberItem[] = [
       "Business Advisory",
       "Enterprise Growth",
       "Market Linkages",
+    ],
+  },
+  {
+    id: "minakshi-nanda",
+    name: "Minakshi Nanda",
+    role: "Head of Operations & Business Development",
+    bio: "Directing organizational operations, program execution, stakeholder engagement, and business development initiatives to deliver measurable enterprise impact.",
+    image: "/images/minakshi-nanda.png",
+    expertise: [
+      "Operations Management",
+      "Business Development",
+      "Program Execution",
+      "Institutional Relations",
     ],
   },
   {
