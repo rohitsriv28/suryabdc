@@ -95,18 +95,18 @@ SBDC utilizes a structured, audit-ready 6-stage lifecycle to deliver consistent 
 
 ## 🚀 4. Key Pages & Platform Features
 
-| Page Route                | Description                         | Key Highlights                                                                                                                             |
-| :------------------------ | :---------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------- |
-| **`/` (Home)**            | Primary corporate gateway           | Dynamic hero with brand banner, 5 service pillars, 6-stage methodology, verified impact metrics, partner highlights, and founders' quotes. |
-| **`/about`**              | Institutional identity & governance | Corporate history (Estd. 2083 B.S.), core values, Birgunj headquarters profile, and detailed leadership bios.                              |
-| **`/services`**           | Complete services breakdown         | Direct navbar navigation link detailing all 5 service pillars and 4 opportunity tracks.                                                    |
-| **`/submit-requirement`** | Business intake gateway             | Multi-step interactive requirement submission form generating instant unique tracking IDs (e.g., `SBDC-2026-XXXXXX`).                      |
-| **`/projects`**           | Case studies & initiatives          | Filterable portfolio of community, enterprise, and institutional engagements.                                                              |
-| **`/activities`**         | Events & workshops calendar         | Timeline of conducted and upcoming capacity-building programs, conferences, and stakeholder forums.                                        |
-| **`/impact`**             | Evidence-based outcomes             | Impact statistics, regional enterprise reach, and verified success stories.                                                                |
-| **`/gallery`**            | Visual archive                      | Curated photo gallery of on-ground workshops, field visits, and formal ceremonies with lightbox modal.                                     |
-| **`/contact`**            | Official inquiry portal             | Direct contact channels, Google Maps location, interactive message form, and official WhatsApp integration.                                |
-| **Legal Pages**           | Regulatory transparency             | Dedicated pages for [Disclaimer](/disclaimer), [Privacy Policy](/privacy-policy), and [Terms of Service](/terms-of-service).               |
+| Page Route                | Description                         | Key Highlights                                                                                                                                                                 |
+| :------------------------ | :---------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **`/` (Home)**            | Primary corporate gateway           | Dynamic hero with brand banner, 5 service pillars, 6-stage methodology, verified impact metrics, partner highlights, and founders' quotes.                                     |
+| **`/about`**              | Institutional identity & governance | Corporate history (Estd. 2083 B.S.), core values, Birgunj headquarters profile, and detailed leadership bios.                                                                  |
+| **`/services`**           | Complete services breakdown         | Direct navbar navigation link detailing all 5 service pillars and 4 opportunity tracks.                                                                                        |
+| **`/submit-requirement`** | Business intake gateway             | Multi-step interactive requirement submission form generating instant unique tracking IDs (e.g., `SBDC-2026-XXXXXX`).                                                          |
+| **`/projects`**           | Case studies & initiatives          | Filterable portfolio of community, enterprise, and institutional engagements.                                                                                                  |
+| **`/activities`**         | Events & workshops calendar         | Timeline of conducted and upcoming capacity-building programs, conferences, and stakeholder forums.                                                                            |
+| **`/impact`**             | Evidence-based outcomes             | Impact statistics, regional enterprise reach, and verified success stories.                                                                                                    |
+| **`/gallery`**            | Visual archive                      | Curated photo gallery of on-ground workshops, field visits, and formal ceremonies with lightbox modal.                                                                         |
+| **`/contact`**            | Official inquiry portal             | Direct contact channels, Google Maps location, transactional Resend email dispatch (with anti-bot honeypot & sliding-window rate limiting), and official WhatsApp integration. |
+| **Legal Pages**           | Regulatory transparency             | Dedicated pages for [Disclaimer](/disclaimer), [Privacy Policy](/privacy-policy), and [Terms of Service](/terms-of-service).                                                   |
 
 ---
 
@@ -177,19 +177,20 @@ The platform is designed around the **60-30-10 Rule** with rich visual tokens:
   <img src="https://ziadoua.github.io/m3-Markdown-Badges/badges/WhatsApp/whatsapp2.svg" alt="WhatsApp" />
 </p>
 
-| Domain / Layer         | Technology & Tools                                                                                   | Version / Details                                                            |
-| :--------------------- | :--------------------------------------------------------------------------------------------------- | :--------------------------------------------------------------------------- |
-| **Core Framework**     | [Next.js](https://nextjs.org/)                                                                       | `16.3.3` (App Router, Server Components & Dynamic Metadata)                  |
-| **UI Library**         | [React](https://react.dev/) / [React DOM](https://react.dev/)                                        | `19.2.8` (React 19 Architecture)                                             |
-| **Language**           | [TypeScript](https://www.typescriptlang.org/)                                                        | `^5` (Strict Type System)                                                    |
-| **Styling & CSS**      | [Tailwind CSS](https://tailwindcss.com/)                                                             | `v4` via `@tailwindcss/postcss`                                              |
-| **Web Analytics**      | [@vercel/analytics](https://vercel.com/analytics)                                                    | `^2.0.1` (Real-time privacy-compliant visitor analytics)                     |
-| **Iconography**        | [Lucide React](https://lucide.dev/) & [React Icons](https://react-icons.github.io/react-icons/)      | `lucide-react` (`^1.37.0`), `react-icons` (`^5.7.0`)                         |
-| **Class Utilities**    | [clsx](https://github.com/lukeed/clsx) & [tailwind-merge](https://github.com/dcastil/tailwind-merge) | Dynamic class resolution without style clashes                               |
-| **SEO & Indexing**     | Native Next.js Dynamic SEO                                                                           | Dynamic XML Sitemap (`/sitemap.xml`), Robots (`/robots.txt`), Canonical tags |
-| **DNS & Security**     | [Cloudflare](https://www.cloudflare.com/)                                                            | DNS Management, SSL/TLS, Google Search Console DNS Verification              |
-| **Hosting & Cloud**    | [Vercel](https://vercel.com/)                                                                        | Edge Deployment, HTTP 308 apex-to-www redirection, automated Git CI/CD       |
-| **Runtimes & Tooling** | [Bun](https://bun.sh/), [Node.js](https://nodejs.org/), [npm](https://npmjs.com/)                    | Multi-runtime execution, ESLint 9, Git version control                       |
+| Domain / Layer         | Technology & Tools                                                                                   | Version / Details                                                                |
+| :--------------------- | :--------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------- |
+| **Core Framework**     | [Next.js](https://nextjs.org/)                                                                       | `16.3.3` (App Router, Server Components & Dynamic Metadata)                      |
+| **UI Library**         | [React](https://react.dev/) / [React DOM](https://react.dev/)                                        | `19.2.8` (React 19 Architecture)                                                 |
+| **Language**           | [TypeScript](https://www.typescriptlang.org/)                                                        | `^5` (Strict Type System)                                                        |
+| **Styling & CSS**      | [Tailwind CSS](https://tailwindcss.com/)                                                             | `v4` via `@tailwindcss/postcss`                                                  |
+| **Web Analytics**      | [@vercel/analytics](https://vercel.com/analytics)                                                    | `^2.0.1` (Real-time privacy-compliant visitor analytics)                         |
+| **Iconography**        | [Lucide React](https://lucide.dev/) & [React Icons](https://react-icons.github.io/react-icons/)      | `lucide-react` (`^1.37.0`), `react-icons` (`^5.7.0`)                             |
+| **Class Utilities**    | [clsx](https://github.com/lukeed/clsx) & [tailwind-merge](https://github.com/dcastil/tailwind-merge) | Dynamic class resolution without style clashes                                   |
+| **SEO & Indexing**     | Native Next.js Dynamic SEO                                                                           | Dynamic XML Sitemap (`/sitemap.xml`), Robots (`/robots.txt`), Canonical tags     |
+| **Email Delivery**     | [Resend](https://resend.com/)                                                                        | `^6.28.1` (Two-email workflow: Internal Staff Alert + Visitor Auto-Confirmation) |
+| **DNS & Security**     | [Cloudflare](https://www.cloudflare.com/)                                                            | DNS Management, SSL/TLS, Google Search Console DNS Verification                  |
+| **Hosting & Cloud**    | [Vercel](https://vercel.com/)                                                                        | Edge Deployment, HTTP 308 apex-to-www redirection, automated Git CI/CD           |
+| **Runtimes & Tooling** | [Bun](https://bun.sh/), [Node.js](https://nodejs.org/), [npm](https://npmjs.com/)                    | Multi-runtime execution, ESLint 9, Git version control                           |
 
 ---
 
@@ -211,7 +212,24 @@ bun install
 # or: npm install
 ```
 
-### 2. Run Development Server
+### 2. Environment Variables & Email Setup
+
+Copy the example environment file and configure your Resend credentials:
+
+```bash
+cp .env.example .env.local
+```
+
+| Variable            | Required                | Description                                                                                               | Default / Example                     |
+| :------------------ | :---------------------- | :-------------------------------------------------------------------------------------------------------- | :------------------------------------ |
+| `RESEND_API_KEY`    | **Yes** (in production) | Resend API Key for sending transactional emails                                                           | `re_123456789...`                     |
+| `RESEND_FROM_EMAIL` | Optional                | Sender address (Sandbox: `onboarding@resend.dev`; Domain-verified: `Surya BDC <noreply@suryabdc.com.np>`) | `Surya BDC <noreply@suryabdc.com.np>` |
+| `CONTACT_TO_EMAIL`  | Optional                | Internal email receiving website inquiries                                                                | `suryabusinessdc@gmail.com`           |
+
+> [!NOTE]
+> On **Vercel**, add `RESEND_API_KEY` under **Project Settings > Environment Variables** for production and preview environments.
+
+### 3. Run Development Server
 
 ```bash
 bun run dev
@@ -220,7 +238,7 @@ bun run dev
 
 Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-### 3. Production Build & Linting
+### 4. Production Build & Linting
 
 ```bash
 # Verify TypeScript & compile production bundle
@@ -261,6 +279,7 @@ suryabdc-portal/
 │   ├── disclaimer/page.tsx     # Facilitation & regulatory disclaimer
 │   ├── privacy-policy/page.tsx # Corporate privacy policy
 │   ├── terms-of-service/       # Terms of service
+│   ├── api/contact/route.ts    # Secure Resend email route handler (rate limiting, honeypot, two-email dispatch)
 │   ├── robots.ts               # Dynamic robots.txt with sitemap reference
 │   └── sitemap.ts              # Dynamic sitemap.xml generator (12 verified canonical routes)
 ├── components/
@@ -269,13 +288,15 @@ suryabdc-portal/
 │   └── home/                   # Hero, WhatWeDo, HowItWorks, FeaturedProjects, StatsBar, etc.
 ├── lib/
 │   ├── constants.ts            # Brand meta, contact info (Birgunj), navigation links
-│   └── data.ts                 # Centralized SITE_METADATA, PAGE_METADATA, Services, Team, Projects
+│   ├── data.ts                 # Centralized SITE_METADATA, PAGE_METADATA, Services, Team, Projects
+│   └── email-templates.ts      # Branded HTML/text templates for internal alert and visitor auto-confirmation
 ├── public/
 │   ├── favicon.png             # Official brand favicon
 │   ├── logos/
 │   │   ├── SuryaBDC-logo.png   # Primary square brand logo
 │   │   └── SuryaBDC-banner.png # High-resolution corporate header banner
 │   └── images/                 # Leadership headshots and verified gallery imagery
+├── .env.example                # Documented template for Resend credentials & mail routing
 ├── CHANGELOG.md                # Version release history and updates ledger
 ├── README.md                   # Platform documentation
 ├── next.config.ts              # Next.js server configuration

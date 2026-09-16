@@ -11,23 +11,110 @@ import {
   CheckCircle2,
   Sparkles,
   ShieldCheck,
+  AlertCircle,
+  Loader2,
 } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 import { BRAND } from "@/lib/constants";
 
+interface FieldErrors {
+  name?: string;
+  email?: string;
+  phone?: string;
+  message?: string;
+}
+
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [serverError, setServerError] = useState<string | null>(null);
+  const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
     subject: "General Inquiry",
     message: "",
+    company_hp: "", // Honeypot field for bot protection
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const validateForm = (): boolean => {
+    const errors: FieldErrors = {};
+
+    if (!formData.name.trim() || formData.name.trim().length < 2) {
+      errors.name = "Please enter your full name (at least 2 characters).";
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!formData.email.trim() || !emailRegex.test(formData.email.trim())) {
+      errors.email = "Please enter a valid email address.";
+    }
+
+    if (formData.phone.trim()) {
+      const phoneRegex = /^[+0-9\s\-()]{6,30}$/;
+      if (!phoneRegex.test(formData.phone.trim())) {
+        errors.phone =
+          "Please enter a valid phone number (e.g. +977 98XXXXXXXX).";
+      }
+    }
+
+    if (!formData.message.trim() || formData.message.trim().length < 10) {
+      errors.message = "Message must be at least 10 characters long.";
+    }
+
+    setFieldErrors(errors);
+    return Object.keys(errors).length === 0;
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setServerError(null);
+
+    if (!validateForm()) {
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok || !data.success) {
+        throw new Error(
+          data.error || "Failed to send message. Please try again.",
+        );
+      }
+
+      setSubmitted(true);
+    } catch (err: any) {
+      setServerError(
+        err.message ||
+          "We could not deliver your message right now. Please try again or reach out on WhatsApp.",
+      );
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleReset = () => {
+    setSubmitted(false);
+    setServerError(null);
+    setFieldErrors({});
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      subject: "General Inquiry",
+      message: "",
+      company_hp: "",
+    });
   };
 
   return (
@@ -181,18 +268,46 @@ export default function ContactPage() {
                   </h3>
                   <p className="text-xs sm:text-sm text-brand-text-secondary max-w-md mx-auto">
                     Thank you for reaching out, <strong>{formData.name}</strong>
-                    . Our team has received your message and will respond
-                    shortly.
+                    . A confirmation email has been dispatched to{" "}
+                    <strong>{formData.email}</strong>, and our team will respond
+                    within 24–48 business hours.
                   </p>
                   <button
-                    onClick={() => setSubmitted(false)}
-                    className="bg-brand-orange text-white text-xs font-bold px-5 py-2.5 rounded-xl mt-2"
+                    onClick={handleReset}
+                    className="bg-brand-orange hover:bg-brand-orange-deep text-white text-xs font-bold px-5 py-2.5 rounded-xl mt-2 transition-colors cursor-pointer"
                   >
                     Send Another Message
                   </button>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-4">
+                <form onSubmit={handleSubmit} noValidate className="space-y-4">
+                  {/* Server error alert banner */}
+                  {serverError && (
+                    <div className="bg-red-50 border border-red-200 text-red-800 rounded-2xl p-4 flex items-start gap-3 text-xs sm:text-sm">
+                      <AlertCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
+                      <div className="flex-grow">
+                        <strong className="font-bold block mb-0.5">
+                          Unable to send message
+                        </strong>
+                        <span>{serverError}</span>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Honeypot field (anti-spam, invisible to real users) */}
+                  <div className="hidden" aria-hidden="true">
+                    <input
+                      type="text"
+                      name="company_hp"
+                      tabIndex={-1}
+                      autoComplete="off"
+                      value={formData.company_hp}
+                      onChange={(e) =>
+                        setFormData({ ...formData, company_hp: e.target.value })
+                      }
+                    />
+                  </div>
+
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-xs font-bold text-brand-maroon mb-1.5">
@@ -201,13 +316,26 @@ export default function ContactPage() {
                       <input
                         type="text"
                         required
+                        disabled={loading}
                         value={formData.name}
-                        onChange={(e) =>
-                          setFormData({ ...formData, name: e.target.value })
-                        }
+                        onChange={(e) => {
+                          setFormData({ ...formData, name: e.target.value });
+                          if (fieldErrors.name) {
+                            setFieldErrors({ ...fieldErrors, name: undefined });
+                          }
+                        }}
                         placeholder="e.g. Maya Shrestha"
-                        className="w-full px-3.5 py-2.5 rounded-xl border border-brand-border text-sm focus:outline-none focus:ring-2 focus:ring-brand-orange/40"
+                        className={`w-full px-3.5 py-2.5 rounded-xl border text-sm focus:outline-none focus:ring-2 transition-colors ${
+                          fieldErrors.name
+                            ? "border-red-400 focus:ring-red-200 bg-red-50/20"
+                            : "border-brand-border focus:ring-brand-orange/40"
+                        }`}
                       />
+                      {fieldErrors.name && (
+                        <p className="text-red-600 text-[11px] mt-1 font-medium">
+                          {fieldErrors.name}
+                        </p>
+                      )}
                     </div>
 
                     <div>
@@ -217,30 +345,65 @@ export default function ContactPage() {
                       <input
                         type="email"
                         required
+                        disabled={loading}
                         value={formData.email}
-                        onChange={(e) =>
-                          setFormData({ ...formData, email: e.target.value })
-                        }
+                        onChange={(e) => {
+                          setFormData({ ...formData, email: e.target.value });
+                          if (fieldErrors.email) {
+                            setFieldErrors({
+                              ...fieldErrors,
+                              email: undefined,
+                            });
+                          }
+                        }}
                         placeholder="e.g. maya@example.com"
-                        className="w-full px-3.5 py-2.5 rounded-xl border border-brand-border text-sm focus:outline-none focus:ring-2 focus:ring-brand-orange/40"
+                        className={`w-full px-3.5 py-2.5 rounded-xl border text-sm focus:outline-none focus:ring-2 transition-colors ${
+                          fieldErrors.email
+                            ? "border-red-400 focus:ring-red-200 bg-red-50/20"
+                            : "border-brand-border focus:ring-brand-orange/40"
+                        }`}
                       />
+                      {fieldErrors.email && (
+                        <p className="text-red-600 text-[11px] mt-1 font-medium">
+                          {fieldErrors.email}
+                        </p>
+                      )}
                     </div>
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-xs font-bold text-brand-maroon mb-1.5">
-                        Phone Number
+                        Phone Number{" "}
+                        <span className="font-normal text-brand-text-muted">
+                          (Optional)
+                        </span>
                       </label>
                       <input
                         type="tel"
+                        disabled={loading}
                         value={formData.phone}
-                        onChange={(e) =>
-                          setFormData({ ...formData, phone: e.target.value })
-                        }
+                        onChange={(e) => {
+                          setFormData({ ...formData, phone: e.target.value });
+                          if (fieldErrors.phone) {
+                            setFieldErrors({
+                              ...fieldErrors,
+                              phone: undefined,
+                            });
+                          }
+                        }}
                         placeholder="e.g. +977 98XXXXXXXX"
-                        className="w-full px-3.5 py-2.5 rounded-xl border border-brand-border text-sm focus:outline-none focus:ring-2 focus:ring-brand-orange/40"
+                        className={`w-full px-3.5 py-2.5 rounded-xl border text-sm focus:outline-none focus:ring-2 transition-colors ${
+                          fieldErrors.phone
+                            ? "border-red-400 focus:ring-red-200 bg-red-50/20"
+                            : "border-brand-border focus:ring-brand-orange/40"
+                        }`}
                       />
+                      {fieldErrors.phone && (
+                        <p className="text-red-600 text-[11px] mt-1 font-medium">
+                          {fieldErrors.phone}
+                        </p>
+                      )}
                     </div>
 
                     <div>
@@ -248,6 +411,7 @@ export default function ContactPage() {
                         Subject / Inquiry Type
                       </label>
                       <select
+                        disabled={loading}
                         value={formData.subject}
                         onChange={(e) =>
                           setFormData({ ...formData, subject: e.target.value })
@@ -276,22 +440,48 @@ export default function ContactPage() {
                     <textarea
                       required
                       rows={5}
+                      disabled={loading}
                       value={formData.message}
-                      onChange={(e) =>
-                        setFormData({ ...formData, message: e.target.value })
-                      }
+                      onChange={(e) => {
+                        setFormData({ ...formData, message: e.target.value });
+                        if (fieldErrors.message) {
+                          setFieldErrors({
+                            ...fieldErrors,
+                            message: undefined,
+                          });
+                        }
+                      }}
                       placeholder="How can SBDC assist you or your organization?"
-                      className="w-full px-3.5 py-2.5 rounded-xl border border-brand-border text-sm focus:outline-none focus:ring-2 focus:ring-brand-orange/40"
+                      className={`w-full px-3.5 py-2.5 rounded-xl border text-sm focus:outline-none focus:ring-2 transition-colors ${
+                        fieldErrors.message
+                          ? "border-red-400 focus:ring-red-200 bg-red-50/20"
+                          : "border-brand-border focus:ring-brand-orange/40"
+                      }`}
                     />
+                    {fieldErrors.message && (
+                      <p className="text-red-600 text-[11px] mt-1 font-medium">
+                        {fieldErrors.message}
+                      </p>
+                    )}
                   </div>
 
                   <div className="pt-2 flex justify-end">
                     <button
                       type="submit"
-                      className="bg-brand-orange hover:bg-brand-orange-deep text-white font-bold text-sm px-8 py-3.5 rounded-xl shadow-md hover:shadow-lg transition-all flex items-center gap-2"
+                      disabled={loading}
+                      className="bg-brand-orange hover:bg-brand-orange-deep disabled:opacity-60 disabled:cursor-not-allowed text-white font-bold text-sm px-8 py-3.5 rounded-xl shadow-md hover:shadow-lg transition-all flex items-center gap-2 cursor-pointer"
                     >
-                      <span>Send Message</span>
-                      <Send className="w-4 h-4" />
+                      {loading ? (
+                        <>
+                          <Loader2 className="w-4 h-4 animate-spin" />
+                          <span>Sending Message...</span>
+                        </>
+                      ) : (
+                        <>
+                          <span>Send Message</span>
+                          <Send className="w-4 h-4" />
+                        </>
+                      )}
                     </button>
                   </div>
                 </form>

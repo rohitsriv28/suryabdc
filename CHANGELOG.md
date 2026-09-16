@@ -4,6 +4,35 @@ All notable changes to the **Surya Business Development Center (SBDC) Web Portal
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.0] - 2026-09-16
+
+### 🌟 Added
+
+- **Transactional Email Delivery System via Resend (`resend` `^6.28.1`)**:
+  - **Secure Serverless Route Handler (`app/api/contact/route.ts`)**: Implemented a robust `POST /api/contact` endpoint for processing inquiries with comprehensive server-side input validation and error handling.
+  - **Two-Email Transactional Workflow**:
+    - **Internal Staff Alert**: Dispatched to `suryabusinessdc@gmail.com` with complete submitter details (name, email, phone, inquiry topic, full message, timestamp, and client IP) and `replyTo` mapped directly to the visitor's email for single-click reply capability.
+    - **Visitor Auto-Confirmation**: Dispatched from `Surya BDC <noreply@suryabdc.com.np>` to the submitter containing a professional corporate receipt, reference summary, 24–48 hour turnaround commitment, Birgunj office contact channels, and WhatsApp quick link.
+  - **Branded Email Template Engine (`lib/email-templates.ts`)**: Built responsive, table-based HTML email templates with inline styling adhering to SBDC brand tokens (`#3B1113`, `#F36A21`, `#FFFDFC`), full HTML-entity escaping (`escapeHtml`), and clean plaintext fallbacks for accessibility and maximum client deliverability.
+  - **Anti-Bot & Abuse Protection**:
+    - **Honeypot Trap**: Invisible `company_hp` input field silently rejecting spam bot submissions with an instant synthetic 200 OK.
+    - **Sliding-Window In-Memory Rate Limiting**: Enforces a strict ceiling of 5 submissions per 10-minute window per IP address, protecting against floods and mail exhaustion with HTTP 429 Too Many Requests.
+  - **Local Development Simulation**: Graceful fallback mode that logs formatted emails to the server console when `RESEND_API_KEY` is not detected, enabling frictionless offline and staging development without sending actual emails.
+  - **Environment Configuration Template (`.env.example`)**: Added documented template for `RESEND_API_KEY`, `RESEND_FROM_EMAIL`, and `CONTACT_TO_EMAIL`.
+
+### 🔄 Changed
+
+- **Contact Form UI & User Experience (`app/contact/page.tsx`)**:
+  - Upgraded form submission flow from native `mailto:` fallback to asynchronous fetch against `/api/contact`.
+  - Added real-time client-side field validation with contextual inline error indicators for name, email, phone, and message fields.
+  - Integrated loading state with animated spinner (`Loader2`) and disabled buttons during active dispatch to prevent accidental duplicate submissions.
+  - Enhanced success state with an on-screen confirmation card displaying the submitter's email and SLA expectation, alongside a reset action to send another message.
+  - Added user-friendly banner alerts for server errors and rate-limiting throttling.
+- **Documentation & Architecture Trees**:
+  - Updated `README.md` with Resend in the Technology Stack matrix, environment setup guide, and updated file structure tree.
+
+---
+
 ## [1.1.2] - 2026-09-13
 
 ### 🔄 Changed
