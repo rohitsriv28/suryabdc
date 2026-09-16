@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import {
   Search,
   ClipboardCheck,
@@ -6,10 +7,9 @@ import {
   Briefcase,
   FileCheck,
   TrendingUp,
-  AlertCircle,
+  ArrowRight,
 } from "lucide-react";
 import { PROCESS_STEPS } from "@/lib/data";
-import { BRAND } from "@/lib/constants";
 
 const stepIcons: Record<string, React.ReactNode> = {
   "01": <Search className="w-7 h-7 text-brand-orange" />,
@@ -25,7 +25,7 @@ export default function HowItWorksSection() {
     <section className="py-16 sm:py-20 bg-brand-light-gray/60 border-y border-brand-border/60 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-14">
           <span className="text-xs font-extrabold uppercase tracking-widest text-brand-orange block mb-2">
             OUR APPROACH
           </span>
@@ -39,51 +39,43 @@ export default function HowItWorksSection() {
         </div>
 
         {/* 6 Steps Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6 relative">
+        <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-6 gap-4 sm:gap-6 relative">
           {PROCESS_STEPS.map((step) => (
-            <div
+            <Link
               key={step.step}
-              className="bg-white rounded-2xl p-5 border border-brand-border/70 shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-200 flex flex-col items-center text-center group"
+              href="/about#approach"
+              className="bg-white rounded-2xl p-5 sm:p-6 border border-brand-border/70 shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center group relative hover:z-20 focus-visible:z-20 focus:outline-none"
             >
               {/* Circular Step Badge with Icon */}
               <div className="relative mb-4">
-                <div className="w-16 h-16 rounded-full bg-brand-orange-tint border-2 border-brand-orange/30 flex items-center justify-center group-hover:scale-105 transition-transform">
+                <div className="w-16 h-16 rounded-full bg-brand-orange-tint border-2 border-brand-orange/30 flex items-center justify-center group-hover:scale-105 group-hover:bg-brand-orange/20 transition-all duration-300">
                   {stepIcons[step.step] || (
                     <Search className="w-6 h-6 text-brand-orange" />
                   )}
                 </div>
-                {/* Step Number Tag */}
-                <span className="absolute -top-1.5 -right-1.5 bg-brand-orange text-white text-[10.5px] font-black w-6 h-6 rounded-full flex items-center justify-center shadow-xs">
+                {/* Step Number Tag - floats up & out of the card on hover/focus, slides back on blur */}
+                <span className="absolute -top-1.5 -right-1.5 bg-brand-orange text-white text-[10.5px] font-black w-6 h-6 rounded-full flex items-center justify-center shadow-xs z-30 pointer-events-none transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:-translate-y-12 group-hover:-translate-x-14 sm:group-hover:-translate-y-14 sm:group-hover:-translate-x-16 group-hover:scale-135 group-hover:shadow-[0_8px_18px_rgba(243,106,33,0.45)] group-hover:ring-2 group-hover:ring-white group-focus-visible:-translate-y-12 group-focus-visible:-translate-x-14 sm:group-focus-visible:-translate-y-14 sm:group-focus-visible:-translate-x-16 group-focus-visible:scale-135 group-focus-visible:shadow-[0_8px_18px_rgba(243,106,33,0.45)] group-focus-visible:ring-2 group-focus-visible:ring-white">
                   {step.step}
                 </span>
               </div>
 
               {/* Step Title */}
-              <h3 className="text-[15px] font-extrabold text-brand-maroon tracking-tight mb-2">
+              <h3 className="text-[15px] font-extrabold text-brand-maroon tracking-tight group-hover:text-brand-orange transition-colors">
                 {step.title}
               </h3>
-
-              {/* Step Description */}
-              <p className="text-[12.5px] text-brand-text-secondary leading-relaxed">
-                {step.description}
-              </p>
-            </div>
+            </Link>
           ))}
         </div>
 
-        {/* Prominent Disclaimer Notice Box matching mockup */}
-        <div className="mt-14 max-w-4xl mx-auto">
-          <div className="bg-brand-orange-tint/90 border border-brand-orange-200 rounded-2xl p-4 sm:p-5 flex items-start sm:items-center gap-4 shadow-sm">
-            <div className="w-10 h-10 rounded-full bg-brand-orange/15 flex items-center justify-center flex-shrink-0 text-brand-orange-deep">
-              <AlertCircle className="w-5 h-5" />
-            </div>
-            <p className="text-[13.5px] text-brand-text-primary leading-relaxed">
-              <strong className="font-bold text-brand-maroon">
-                Please note:{" "}
-              </strong>
-              {BRAND.disclaimer.short}
-            </p>
-          </div>
+        {/* View Full Methodology Link */}
+        <div className="mt-10 text-center">
+          <Link
+            href="/about#approach"
+            className="inline-flex items-center gap-2 text-sm font-bold text-brand-maroon hover:text-brand-orange border-b-2 border-brand-orange pb-0.5 transition-colors"
+          >
+            <span>Explore our full 6-stage methodology in About Us</span>
+            <ArrowRight className="w-4 h-4" />
+          </Link>
         </div>
       </div>
     </section>

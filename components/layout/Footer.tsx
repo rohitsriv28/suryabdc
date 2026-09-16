@@ -173,7 +173,7 @@ export default function Footer() {
         {/* Bottom Legal & Copyright Bar */}
         <div className="pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-[12px] text-neutral-400">
           <p>
-            &copy; {currentYear} {BRAND.name}. All Rights Reserved.
+            &copy; {currentYear} {BRAND.name} All Rights Reserved.
           </p>
           <div className="flex items-center gap-6">
             <Link

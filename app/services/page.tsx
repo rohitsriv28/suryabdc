@@ -8,18 +8,13 @@ import {
   FileCheck,
   Users,
   ArrowRight,
-  AlertCircle,
   CheckCircle2,
   Sparkles,
-  ClipboardCheck,
-  FileText,
-  Briefcase,
 } from "lucide-react";
 import {
   SERVICES,
   SERVICE_AREAS,
   PROGRAM_TYPES,
-  PROCESS_STEPS,
   PAGE_METADATA,
 } from "@/lib/data";
 import CtaBannerSection from "@/components/home/CtaBannerSection";
@@ -38,15 +33,6 @@ const serviceIcons: Record<string, React.ReactNode> = {
   GraduationCap: <GraduationCap className="w-8 h-8 text-brand-orange" />,
   FileCheck: <FileCheck className="w-8 h-8 text-brand-orange" />,
   Users: <Users className="w-8 h-8 text-brand-orange" />,
-};
-
-const approachIcons: Record<string, React.ReactNode> = {
-  "01": <Search className="w-6 h-6 text-brand-orange" />,
-  "02": <ClipboardCheck className="w-6 h-6 text-brand-orange" />,
-  "03": <FileText className="w-6 h-6 text-brand-orange" />,
-  "04": <Briefcase className="w-6 h-6 text-brand-orange" />,
-  "05": <FileCheck className="w-6 h-6 text-brand-orange" />,
-  "06": <TrendingUp className="w-6 h-6 text-brand-orange" />,
 };
 
 export default function ServicesPage() {
@@ -175,66 +161,8 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* 6-Stage Process Section */}
-      <section className="py-20 bg-brand-warm-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-xs font-extrabold uppercase tracking-widest text-brand-orange block mb-2">
-              OUR APPROACH
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-brand-maroon tracking-tight">
-              A Structured 6-Stage Methodology
-            </h2>
-            <p className="text-brand-text-secondary text-[15px] mt-2">
-              Our systematic approach ensures accountable execution, reliable
-              documentation, and continuous improvement.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6">
-            {PROCESS_STEPS.map((step) => (
-              <div
-                key={step.step}
-                className="bg-white rounded-2xl p-5 border border-brand-border/80 shadow-xs flex flex-col items-center text-center hover:shadow-md hover:-translate-y-1 transition-all"
-              >
-                <div className="w-14 h-14 rounded-full bg-brand-orange-tint border-2 border-brand-orange/20 shadow-xs flex items-center justify-center text-brand-orange mb-4 relative">
-                  {approachIcons[step.step] || (
-                    <span className="font-extrabold text-base">
-                      {step.step}
-                    </span>
-                  )}
-                </div>
-                <span className="text-[11px] font-extrabold text-brand-orange tracking-widest uppercase mb-1">
-                  Step {step.step}
-                </span>
-                <h3 className="text-base font-bold text-brand-maroon mb-2">
-                  {step.title}
-                </h3>
-                <p className="text-xs text-brand-text-secondary leading-relaxed">
-                  {step.description}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          {/* Facilitation Disclaimer Box */}
-          <div className="mt-14 max-w-3xl mx-auto">
-            <div className="bg-brand-orange-tint border border-brand-orange-200 rounded-2xl p-4 sm:p-5 flex items-start gap-3 shadow-xs">
-              <AlertCircle className="w-5 h-5 text-brand-orange-deep flex-shrink-0 mt-0.5" />
-              <p className="text-xs sm:text-sm text-brand-text-primary leading-relaxed">
-                <strong className="font-bold text-brand-maroon">Note: </strong>
-                SBDC delivers business development, research, training, and
-                advisory services. SBDC does not provide direct loans or grants;
-                all institutional opportunities depend on partner eligibility
-                criteria.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Program Types Grid */}
-      <section className="py-20 bg-white border-t border-brand-border/60">
+      <section className="py-20 bg-brand-warm-white border-t border-brand-border/60">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-xs font-extrabold uppercase tracking-widest text-brand-orange block mb-2">

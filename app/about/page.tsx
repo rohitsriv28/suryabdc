@@ -16,6 +16,7 @@ import {
   Briefcase,
   FileCheck,
   TrendingUp,
+  AlertCircle,
 } from "lucide-react";
 import StatsBarSection from "@/components/home/StatsBarSection";
 import CtaBannerSection from "@/components/home/CtaBannerSection";
@@ -169,7 +170,7 @@ export default function AboutPage() {
       <StatsBarSection />
 
       {/* Our Approach (6-Stage Methodology) */}
-      <section className="py-20 bg-brand-warm-white">
+      <section id="approach" className="py-20 bg-brand-warm-white scroll-mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-xs font-extrabold uppercase tracking-widest text-brand-orange block mb-2">
@@ -188,9 +189,11 @@ export default function AboutPage() {
             {PROCESS_STEPS.map((step) => (
               <div
                 key={step.step}
-                className="bg-white rounded-2xl p-6 border border-brand-border text-center flex flex-col items-center shadow-xs hover:shadow-md hover:-translate-y-1 transition-all"
+                tabIndex={0}
+                className="bg-white rounded-2xl p-6 border border-brand-border text-center flex flex-col items-center shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-300 group relative hover:z-20 focus-visible:z-20 focus-visible:ring-2 focus-visible:ring-brand-orange focus:outline-none cursor-default"
               >
-                <div className="w-14 h-14 rounded-full bg-brand-orange-tint text-brand-orange flex items-center justify-center mb-4">
+                {/* Floating Icon Container */}
+                <div className="w-14 h-14 rounded-full bg-brand-orange-tint border-2 border-brand-orange/30 text-brand-orange flex items-center justify-center mb-4 z-30 pointer-events-none transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:-translate-y-12 sm:group-hover:-translate-y-14 group-hover:scale-125 group-hover:shadow-[0_12px_24px_rgba(243,106,33,0.35)] group-hover:ring-4 group-hover:ring-white group-hover:bg-white group-hover:border-brand-orange group-focus-visible:-translate-y-12 sm:group-focus-visible:-translate-y-14 group-focus-visible:scale-125 group-focus-visible:shadow-[0_12px_24px_rgba(243,106,33,0.35)] group-focus-visible:ring-4 group-focus-visible:ring-white group-focus-visible:bg-white group-focus-visible:border-brand-orange">
                   {approachIcons[step.step] || (
                     <Search className="w-6 h-6 text-brand-orange" />
                   )}
@@ -198,7 +201,7 @@ export default function AboutPage() {
                 <span className="text-[11px] font-extrabold text-brand-orange tracking-widest uppercase mb-1">
                   Step {step.step}
                 </span>
-                <h3 className="text-base font-bold text-brand-maroon mb-2">
+                <h3 className="text-base font-bold text-brand-maroon mb-2 group-hover:text-brand-orange transition-colors">
                   {step.title}
                 </h3>
                 <p className="text-xs text-brand-text-secondary leading-relaxed">
@@ -206,6 +209,21 @@ export default function AboutPage() {
                 </p>
               </div>
             ))}
+          </div>
+
+          {/* Prominent Disclaimer Notice Box */}
+          <div className="mt-14 max-w-4xl mx-auto">
+            <div className="bg-brand-orange-tint/90 border border-brand-orange-200 rounded-2xl p-4 sm:p-5 flex items-start sm:items-center gap-4 shadow-sm">
+              <div className="w-10 h-10 rounded-full bg-brand-orange/15 flex items-center justify-center flex-shrink-0 text-brand-orange-deep">
+                <AlertCircle className="w-5 h-5" />
+              </div>
+              <p className="text-[13.5px] text-brand-text-primary leading-relaxed">
+                <strong className="font-bold text-brand-maroon">
+                  Please note:{" "}
+                </strong>
+                {BRAND.disclaimer.short}
+              </p>
+            </div>
           </div>
         </div>
       </section>

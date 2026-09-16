@@ -53,36 +53,33 @@ export default function WhatWeDoSection() {
         {/* 5 Core Service Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
           {SERVICES.map((service) => (
-            <div
+            <Link
               key={service.id}
-              className="bg-white rounded-2xl p-6 border border-brand-border/80 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col items-center text-center group"
+              href={`/services#${service.id}`}
+              className="bg-white rounded-2xl p-6 border border-brand-border/80 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col items-center text-center group h-full justify-between"
             >
-              {/* Icon Container with Orange Tint */}
-              <div className="w-16 h-16 rounded-full bg-brand-orange-tint flex items-center justify-center mb-5 group-hover:scale-110 group-hover:bg-brand-orange/20 transition-all duration-300">
-                {iconMap[service.iconName] || (
-                  <Sparkles className="w-7 h-7 text-brand-orange" />
-                )}
+              <div className="flex flex-col items-center w-full">
+                {/* Icon Container with Orange Tint */}
+                <div className="w-16 h-16 rounded-full bg-brand-orange-tint flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-brand-orange/20 transition-all duration-300">
+                  {iconMap[service.iconName] || (
+                    <Sparkles className="w-7 h-7 text-brand-orange" />
+                  )}
+                </div>
+
+                {/* Service Title */}
+                <h3 className="text-[16px] font-bold text-brand-maroon leading-snug group-hover:text-brand-orange transition-colors min-h-[44px] flex items-center justify-center">
+                  {service.title}
+                </h3>
               </div>
 
-              {/* Service Title */}
-              <h3 className="text-[17px] font-bold text-brand-maroon mb-3 group-hover:text-brand-orange transition-colors">
-                {service.title}
-              </h3>
-
-              {/* Service Description */}
-              <p className="text-[13px] text-brand-text-secondary leading-relaxed mb-4 flex-grow">
-                {service.shortDesc}
-              </p>
-
-              {/* Link */}
-              <Link
-                href={`/services#${service.id}`}
-                className="inline-flex items-center gap-1.5 text-xs font-bold text-brand-orange hover:text-brand-orange-deep mt-auto pt-2 group/link"
-              >
-                <span>Learn More</span>
-                <ArrowRight className="w-3.5 h-3.5 group-hover/link:translate-x-1 transition-transform" />
-              </Link>
-            </div>
+              {/* Link Indicator */}
+              <div className="pt-4 mt-auto">
+                <span className="inline-flex items-center gap-1.5 text-xs font-bold text-brand-orange group-hover:text-brand-orange-deep transition-colors">
+                  <span>Learn More</span>
+                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                </span>
+              </div>
+            </Link>
           ))}
         </div>
 

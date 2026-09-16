@@ -206,11 +206,11 @@ export interface GalleryPhoto {
 }
 
 export const IMPACT_STATS: StatItem[] = [
-  { value: "500+", label: "Entrepreneurs Reached", icon: "Users" },
-  { value: "25+", label: "Training Programs Conducted", icon: "GraduationCap" },
-  { value: "150+", label: "Businesses Supported", icon: "Briefcase" },
-  { value: "30+", label: "Institutional Partnerships", icon: "Handshake" },
-  { value: "10+", label: "Development Initiatives", icon: "TrendingUp" },
+  { value: "100+", label: "Entrepreneurs Reached", icon: "Users" },
+  { value: "8+", label: "Training Programs Conducted", icon: "GraduationCap" },
+  { value: "10+", label: "Businesses Supported", icon: "Briefcase" },
+  { value: "7+", label: "Institutional Partnerships", icon: "Handshake" },
+  { value: "5+", label: "Development Initiatives", icon: "TrendingUp" },
 ];
 
 export const SERVICE_AREAS: string[] = [

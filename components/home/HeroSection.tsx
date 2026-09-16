@@ -92,7 +92,7 @@ export default function HeroSection() {
                 </div>
                 <div>
                   <div className="text-lg sm:text-xl font-extrabold text-brand-maroon leading-tight">
-                    500+
+                    4+
                   </div>
                   <div className="text-[11px] sm:text-[12px] font-semibold text-brand-text-secondary">
                     Entrepreneurs Guided
