@@ -4,6 +4,17 @@ All notable changes to the **Surya Business Development Center (SBDC) Web Portal
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.1] - 2026-09-22
+
+### 🌟 Added
+
+- **Machine-Readable Entity Architecture & GEO (Generative Engine Optimization)**:
+  - Injected Schema.org `Organization`, `LocalBusiness`, and `WebSite` JSON-LD structured data graph into `app/layout.tsx`.
+  - Declares canonical entity metadata (`@id`, legal name, logo, Birgunj coordinates, phone, email, operating hours, social graph links, and leadership profiles for Atul Raut, Minakshi Nanda, and Rohit Srivastava).
+  - Explicitly disambiguates Surya Business Development Center Pvt. Ltd. (Birgunj, Nepal) from unrelated legacy entities in Google AI Overviews, Microsoft Copilot, and Knowledge Graph crawlers.
+
+---
+
 ## [1.2.0] - 2026-09-16
 
 ### 🌟 Added

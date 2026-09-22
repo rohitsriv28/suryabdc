@@ -16,20 +16,125 @@ export interface PageMetadataConfig {
 export const SITE_METADATA = {
   baseUrl: "https://www.suryabdc.com.np",
   siteName: "Surya Business Development Center",
-  defaultTitle:
-    "Surya Business Development Center (SBDC) | Empowering Businesses. Building Futures.",
-  titleTemplate: "%s | Surya Business Development Center (SBDC)",
+  defaultTitle: "Surya Business Development Center (SBDC) - Birgunj, Nepal",
+  titleTemplate: "%s | Surya BDC",
   defaultDescription:
-    "Official corporate portal of Surya Business Development Center Pvt. Ltd. (SBDC). Supporting entrepreneurs, enterprises, institutions, and development organizations through practical business solutions, research, training, and enterprise development.",
+    "Supporting entrepreneurs, enterprises, and institutions in Nepal through business development, advisory, training, and enterprise facilitation.",
   ogImage: "/logos/SuryaBDC-banner.png",
+};
+
+export const SCHEMA_ORGANIZATION = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["Organization", "LocalBusiness"],
+      "@id": "https://www.suryabdc.com.np/#organization",
+      name: "Surya Business Development Center Pvt. Ltd.",
+      alternateName: ["SBDC", "Surya BDC", "Surya Business Development Center"],
+      legalName: "Surya Business Development Center Pvt. Ltd.",
+      url: "https://www.suryabdc.com.np",
+      logo: {
+        "@type": "ImageObject",
+        "@id": "https://www.suryabdc.com.np/#logo",
+        url: "https://www.suryabdc.com.np/logos/SuryaBDC-logo.png",
+        caption: "Surya Business Development Center (SBDC) Logo",
+      },
+      image: "https://www.suryabdc.com.np/logos/SuryaBDC-banner.png",
+      description:
+        "Official corporate portal of Surya Business Development Center Pvt. Ltd. (SBDC). Supporting entrepreneurs, enterprises, institutions, and development organizations through practical business solutions, research, training, and enterprise development.",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Birgunj",
+        addressLocality: "Birgunj",
+        addressRegion: "Madhesh Province",
+        postalCode: "44300",
+        addressCountry: "NP",
+      },
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: "27.008583",
+        longitude: "84.882222",
+      },
+      contactPoint: [
+        {
+          "@type": "ContactPoint",
+          telephone: "+977-9700024495",
+          contactType: "customer support",
+          email: "suryabusinessdc@gmail.com",
+          areaServed: "NP",
+          availableLanguage: ["English", "Nepali"],
+        },
+      ],
+      sameAs: [
+        "https://facebook.com/suryabdc",
+        "https://linkedin.com/company/suryabdc",
+        "https://instagram.com/suryabdc",
+        "https://youtube.com/@suryabdc",
+      ],
+      founder: [
+        {
+          "@type": "Person",
+          name: "Atul Raut",
+          jobTitle: "Founder & Director",
+        },
+      ],
+      employee: [
+        {
+          "@type": "Person",
+          name: "Minakshi Nanda",
+          jobTitle: "Head of Operations & Business Development",
+        },
+        {
+          "@type": "Person",
+          name: "Rohit Srivastava",
+          jobTitle: "CTO – Head of Technology and Digital Operations",
+        },
+      ],
+      knowsAbout: [
+        "Business Development & Advisory",
+        "Enterprise Development & Incubation",
+        "MSME & SME Capacity Building",
+        "Market Linkages & Trade Networks",
+        "Access to Finance Facilitation",
+        "Digital Transformation & Tech Enablement",
+        "Birgunj, Parsa, Madhesh Province, Nepal",
+      ],
+      openingHoursSpecification: [
+        {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: [
+            "Sunday",
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+          ],
+          opens: "09:00",
+          closes: "17:00",
+        },
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.suryabdc.com.np/#website",
+      url: "https://www.suryabdc.com.np",
+      name: "Surya Business Development Center",
+      description:
+        "Official corporate portal of Surya Business Development Center Pvt. Ltd. (SBDC).",
+      publisher: {
+        "@id": "https://www.suryabdc.com.np/#organization",
+      },
+      inLanguage: "en-US",
+    },
+  ],
 };
 
 export const PAGE_METADATA: Record<string, PageMetadataConfig> = {
   home: {
-    title:
-      "Surya Business Development Center (SBDC) | Empowering Businesses. Building Futures.",
+    title: "Surya Business Development Center (SBDC) - Birgunj, Nepal",
     description:
-      "Official corporate portal of Surya Business Development Center Pvt. Ltd. (SBDC). Supporting entrepreneurs, enterprises, institutions, and development organizations through practical business solutions, research, training, and enterprise development.",
+      "Supporting entrepreneurs, enterprises, and institutions in Nepal through business development, advisory, training, and enterprise facilitation.",
     canonical: "/",
     changeFrequency: "weekly",
     priority: 1.0,

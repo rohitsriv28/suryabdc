@@ -5,7 +5,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import FloatingWhatsApp from "@/components/layout/FloatingWhatsApp";
 import { Analytics } from "@vercel/analytics/next";
-import { SITE_METADATA, PAGE_METADATA } from "@/lib/data";
+import { SITE_METADATA, SCHEMA_ORGANIZATION } from "@/lib/data";
 
 const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -84,6 +84,14 @@ export default function RootLayout({
       className={`${jakarta.variable} scroll-smooth`}
       data-scroll-behavior="smooth"
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(SCHEMA_ORGANIZATION),
+          }}
+        />
+      </head>
       <body className="min-h-screen flex flex-col font-sans bg-brand-warm-white text-brand-text-primary antialiased selection:bg-brand-orange-tint selection:text-brand-orange-deep">
         <Navbar />
         <main className="flex-grow">{children}</main>
