@@ -99,6 +99,8 @@ export default function AboutPage() {
             src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=80"
             alt="Surya Business Development Center Headquarters"
             className="w-full h-full object-cover"
+            loading="lazy"
+            decoding="async"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-brand-maroon/85 via-brand-maroon/25 to-transparent flex flex-col justify-end p-4 sm:p-10 text-white">
             <div className="inline-block bg-brand-orange text-white text-[10px] sm:text-xs font-extrabold px-2.5 sm:px-3 py-1 rounded-md uppercase tracking-wider mb-1 sm:mb-2 w-fit">
@@ -294,6 +296,8 @@ export default function AboutPage() {
                     src={member.image}
                     alt={member.name}
                     className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 <div className="p-5 text-center">

@@ -76,6 +76,8 @@ export default function ImpactPage() {
                     src={test.avatar}
                     alt={test.name}
                     className="w-12 h-12 rounded-full object-cover border-2 border-brand-orange-200"
+                    loading="lazy"
+                    decoding="async"
                   />
                   <div>
                     <h3 className="text-sm font-bold text-brand-maroon">

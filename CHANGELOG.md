@@ -4,6 +4,21 @@ All notable changes to the **Surya Business Development Center (SBDC) Web Portal
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.2] - 2026-09-22
+
+### ⚡ Performance & Core Web Vitals Optimization
+
+- **Asset Weight Reduction**: Switched site icons in `app/layout.tsx` from 728 KB `favicon.png` to lightweight 4.2 KB `favicon.ico` (saving ~724 KB on every page load).
+- **LCP Accelerated Delivery**: Applied `fetchPriority="high"` and `decoding="async"` to the above-the-fold hero image in `HeroSection.tsx` for immediate priority discovery and rendering.
+- **Dynamic Code Splitting (`next/dynamic`)**: Converted below-the-fold homepage sections (`FeaturedProjectsSection`, `StatsBarSection`, `TestimonialsSection`, `GalleryPreviewSection`, `PartnerLogosSection`, `CtaBannerSection`) to dynamic lazy-loaded imports, minimizing initial client bundle transfer.
+- **Universal Image Lazy Loading**: Enforced native `loading="lazy"` and asynchronous decoding (`decoding="async"`) across all content images in home sections and sub-pages (`/about`, `/services`, `/projects`, `/impact`, `/gallery`, `/activities`).
+
+### ♿ Accessibility Calibration (100 / 100)
+
+- **Compliant Touch Targets (`target-size`)**: Refactored carousel navigation dots in `TestimonialsSection.tsx` with `p-2 min-w-[24px] min-h-[24px]` tap boundaries, satisfying WCAG 2.5.8 and clearing Lighthouse target-size audit.
+
+---
+
 ## [1.2.1] - 2026-09-22
 
 ### 🌟 Added

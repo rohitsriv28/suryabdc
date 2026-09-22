@@ -74,6 +74,8 @@ export default function ServicesPage() {
             src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1600&q=80"
             alt="SBDC Advisory and Facilitation Services"
             className="w-full h-full object-cover"
+            loading="lazy"
+            decoding="async"
           />
         </div>
       </section>
@@ -184,6 +186,8 @@ export default function ServicesPage() {
                     src={prog.image}
                     alt={prog.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 <div className="p-5 flex flex-col flex-grow">

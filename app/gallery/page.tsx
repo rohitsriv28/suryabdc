@@ -77,6 +77,8 @@ export default function GalleryPage() {
                     src={photo.imageUrl}
                     alt={photo.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                    decoding="async"
                   />
                   <div className="absolute inset-0 bg-brand-maroon/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
                     <span className="bg-brand-orange text-white text-xs font-bold px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-lg">
@@ -137,6 +139,8 @@ export default function GalleryPage() {
                 src={activePhoto.imageUrl}
                 alt={activePhoto.title}
                 className="max-w-full max-h-[70vh] object-contain"
+                loading="lazy"
+                decoding="async"
               />
             </div>
             <div className="p-6 bg-neutral-900 text-white space-y-2">

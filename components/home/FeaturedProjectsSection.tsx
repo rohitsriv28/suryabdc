@@ -39,6 +39,8 @@ export default function FeaturedProjectsSection() {
                   src={project.image}
                   alt={project.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                  decoding="async"
                 />
                 <span className="absolute top-3 right-3 bg-brand-maroon/90 text-white text-[11px] font-bold px-2.5 py-1 rounded-full backdrop-blur-xs">
                   {project.status}

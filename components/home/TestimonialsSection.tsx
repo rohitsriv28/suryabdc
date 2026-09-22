@@ -51,6 +51,8 @@ export default function TestimonialsSection() {
                 src={current.avatar}
                 alt={current.name}
                 className="w-full h-full object-cover"
+                loading="lazy"
+                decoding="async"
               />
             </div>
 
@@ -91,18 +93,23 @@ export default function TestimonialsSection() {
           </button>
 
           {/* Dot Indicators */}
-          <div className="flex justify-center gap-2 mt-6">
+          <div className="flex justify-center items-center gap-1 mt-6">
             {TESTIMONIALS.map((_, i) => (
               <button
                 key={i}
+                type="button"
                 onClick={() => setCurrentIndex(i)}
                 aria-label={`Go to slide ${i + 1}`}
-                className={`w-2.5 h-2.5 rounded-full transition-all ${
-                  currentIndex === i
-                    ? "w-8 bg-brand-orange"
-                    : "bg-brand-border hover:bg-brand-orange/50"
-                }`}
-              />
+                className="p-2 min-w-[24px] min-h-[24px] flex items-center justify-center focus:outline-none"
+              >
+                <span
+                  className={`h-2.5 rounded-full transition-all block ${
+                    currentIndex === i
+                      ? "w-8 bg-brand-orange"
+                      : "w-2.5 bg-brand-border hover:bg-brand-orange/50"
+                  }`}
+                />
+              </button>
             ))}
           </div>
         </div>

@@ -80,6 +80,8 @@ export default function HeroSection() {
                     src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1000&q=80"
                     alt="SBDC advisory team collaborating with Nepalese entrepreneurs"
                     className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700 ease-out"
+                    fetchPriority="high"
+                    decoding="async"
                   />
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-brand-maroon/50 via-transparent to-transparent pointer-events-none" />
