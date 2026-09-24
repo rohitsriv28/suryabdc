@@ -4,6 +4,14 @@ All notable changes to the **Surya Business Development Center (SBDC) Web Portal
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.3] - 2026-09-24
+
+### 🚀 Search Engine Automation & Real-Time Ingestion
+
+- **Microsoft Bing IndexNow Protocol**: Deployed verification key file `public/bc8bb4e83ac94fefabf8f80baa5fcb5c.txt` to enable real-time automated URL ingestion and instant cache updating across Bing, Copilot, and participating search engines via the IndexNow protocol.
+
+---
+
 ## [1.2.2] - 2026-09-22
 
 ### ⚡ Performance & Core Web Vitals Optimization
