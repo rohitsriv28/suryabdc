@@ -172,10 +172,24 @@ export default function Footer() {
 
         {/* Bottom Legal & Copyright Bar */}
         <div className="pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-[12px] text-neutral-400">
-          <p>
-            &copy; {currentYear} {BRAND.name} All Rights Reserved.
-          </p>
-          <div className="flex items-center gap-6">
+          <div className="flex flex-col sm:flex-row items-center gap-1.5 sm:gap-2 text-center sm:text-left">
+            <p>
+              &copy; {currentYear} {BRAND.name} All Rights Reserved.
+            </p>
+            <span className="hidden sm:inline text-neutral-600">•</span>
+            <p className="text-neutral-400">
+              Crafted by{" "}
+              <a
+                href="https://linktr.ee/rohitsrivastava28"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-neutral-300 hover:text-brand-orange transition-colors font-medium underline underline-offset-2"
+              >
+                Rohit Srivastava
+              </a>
+            </p>
+          </div>
+          <div className="flex items-center gap-4 sm:gap-6 flex-wrap justify-center">
             <Link
               href="/privacy-policy"
               className="hover:text-brand-orange transition-colors"
