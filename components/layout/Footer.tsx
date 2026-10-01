@@ -135,7 +135,14 @@ export default function Footer() {
             <ul className="space-y-3 text-[13px] text-neutral-300">
               <li className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-brand-orange flex-shrink-0 mt-0.5" />
-                <span>{BRAND.address}</span>
+                <a
+                  href={BRAND.googleMapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors"
+                >
+                  {BRAND.address}
+                </a>
               </li>
               <li className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-brand-orange flex-shrink-0" />

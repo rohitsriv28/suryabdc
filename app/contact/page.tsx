@@ -163,7 +163,14 @@ export default function ContactPage() {
                     <strong className="block text-brand-maroon font-bold text-xs uppercase tracking-wider">
                       Physical Address
                     </strong>
-                    <span className="text-sm">{BRAND.address}</span>
+                    <a
+                      href={BRAND.googleMapsUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm hover:text-brand-orange transition-colors inline-flex items-center gap-1 group"
+                    >
+                      <span>{BRAND.address}</span>
+                    </a>
                   </div>
                 </li>
 

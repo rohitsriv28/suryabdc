@@ -6,6 +6,7 @@ export const BRAND = {
   subTagline:
     "Practical solutions for entrepreneurs, enterprises, institutions and development organizations.",
   address: "Birgunj, Parsa, Madhesh Province, Nepal",
+  googleMapsUrl: "https://maps.app.goo.gl/WzJVq9EZaeF2hPvw9",
   phone: "+9779700024495",
   email: "suryabusinessdc@gmail.com",
   whatsapp: "+9779700024495",

@@ -96,8 +96,8 @@ export default function AboutPage() {
         {/* Corporate Headquarters Banner Image */}
         <div className="mt-10 relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white aspect-[16/9] sm:aspect-[21/9] bg-brand-light-gray">
           <img
-            src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=80"
-            alt="Surya Business Development Center Headquarters"
+            src="/images/SuryaBDC_Office.png"
+            alt="Surya Business Development Center Office"
             className="w-full h-full object-cover"
             loading="lazy"
             decoding="async"
